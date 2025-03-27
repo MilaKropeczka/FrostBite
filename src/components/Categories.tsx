@@ -1,12 +1,12 @@
 import { LuIceCreamCone } from 'react-icons/lu';
-import { TbIceCream } from 'react-icons/tb';
 import { RiCake3Line } from 'react-icons/ri';
+import { RiDrinks2Line } from 'react-icons/ri';
 import React from 'react';
 
 export default function Categories() {
 	const CATEGORIES = [
-		{ id: 1, title: 'Flavors', emoji: LuIceCreamCone },
-		{ id: 2, title: 'Treats', emoji: TbIceCream },
+		{ id: 1, title: 'Flavours', emoji: LuIceCreamCone },
+		{ id: 2, title: 'Drinks', emoji: RiDrinks2Line },
 		{ id: 3, title: 'Desserts', emoji: RiCake3Line },
 	];
 
@@ -20,7 +20,7 @@ export default function Categories() {
 						<div className='bg-white p-3 inline-flex items-center justify-center text-pink-800 shadow-xl rounded-xl cursor-pointer transform duration-300 hover:-translate-y-1 hover:bg-gray-50 border border-pink-200 active:scale-90'>
 							{React.createElement(item.emoji, { size: 30 })}
 						</div>
-						<span className='text-sm text-gray-700'>
+						<span className='text-sm text-pink-700'>
 							{item.title}
 						</span>
 					</div>
