@@ -17,7 +17,7 @@ export default function Categories() {
 					<div
 						key={item.id}
 						className='flex flex-col items-center gap-2'>
-						<div className='bg-white p-3 inline-flex items-center justify-center text-pink-800 shadow-md rounded-xl cursor-pointer transform duration-300 hover:-translate-y-1 hover:bg-gray-50 border border-pink-200 active:scale-90'>
+						<div className='bg-white p-3 inline-flex items-center justify-center text-pink-800 shadow-xl rounded-xl cursor-pointer transform duration-300 hover:-translate-y-1 hover:bg-gray-50 border border-pink-200 active:scale-90'>
 							{React.createElement(item.emoji, { size: 30 })}
 						</div>
 						<span className='text-sm text-gray-700'>

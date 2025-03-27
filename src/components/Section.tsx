@@ -74,12 +74,12 @@ export default function Section() {
 				Popular
 			</h2>
 
-			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 w-full max-w-6xl px-10 sm:px-4'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-4 w-full max-w-6xl px-10 sm:px-4'>
 				{products.map((product) => (
 					<div
 						key={product.id}
-						className='bg-white rounded-2xl shadow-md w-full flex flex-col my-2 items-center transition-transform duration-300 transform hover:-translate-y-2 justify-end'>
-						<div className='w-full h-58 overflow-hidden rounded-t-xl'>
+						className='bg-white rounded-2xl shadow-xl w-full flex flex-col items-center transition-transform duration-300 transform hover:-translate-y-2 justify-end mb-3'>
+						<div className='w-full h-48 overflow-hidden rounded-t-xl'>
 							<img
 								src={product.image}
 								alt={product.name}
@@ -90,7 +90,7 @@ export default function Section() {
 							<p className='text-pink-700 font-semibold text-lg'>
 								{product.name}
 							</p>
-							<div className='flex items-center justify-center gap-1 text-pink-500 mt-2'>
+							<div className='flex items-center justify-center gap-1 text-pink-500 mt-1'>
 								{[...Array(product.stars)].map((_, index) => (
 									<FaStar key={index} className='text-md' />
 								))}
@@ -104,12 +104,13 @@ export default function Section() {
 								)}
 								<span>4.2</span>
 							</div>
-							<span className='text-gray-700 text-lg font-bold mt-2 block'>
+							<span className='text-gray-700 text-lg font-bold mt-1 block'>
 								{product.price}
 							</span>
 						</div>
-						<button className='rounded-xl px-6 py-2 text-white cursor-pointer transition-all duration-200  active:scale-95 w-full max-w-[200px] bg-gradient-to-l from-pink-700 to-pink-800 mb-4'>
-							Dodaj do koszyka
+
+						<button className='rounded-xl px-6 py-2 text-white cursor-pointer transition-all duration-200 active:scale-95 w-full max-w-3/4 bg-gradient-to-l from-pink-700 to-pink-800 mb-2 hover:text-pink-200'>
+							Add to cart
 						</button>
 					</div>
 				))}
