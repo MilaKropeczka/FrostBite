@@ -1,4 +1,4 @@
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/UI/ProductCard/ProductCard';
 import organicFruitImage1 from '../assets/1.jpg';
 import organicFruitImage2 from '../assets/2.jpg';
 import organicFruitImage3 from '../assets/3.jpg';

@@ -1,5 +1,5 @@
-import StarRating from './UI/StarRating';
-import Button from './UI/Button';
+import StarRating from '../StarRating';
+import Button from '../Button';
 
 export default function ProductCard({ product }) {
 	return (
