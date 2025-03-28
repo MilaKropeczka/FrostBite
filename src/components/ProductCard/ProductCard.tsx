@@ -20,7 +20,12 @@ export default function ProductCard({ product }) {
 					{product.price}
 				</span>
 			</div>
-			<Button>Add to cart</Button>
+			<Button
+				onClick={() => {
+					alert('dodaje do koszyka');
+				}}>
+				Add to cart
+			</Button>
 		</div>
 	);
 }
