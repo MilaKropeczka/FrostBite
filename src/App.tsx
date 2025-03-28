@@ -2,8 +2,8 @@ import './App.css';
 import BackgroundGradient from './components/BackgroundGradient';
 import Header from './components/Header';
 import Categories from './components/Categories';
-import Section from './components/Section';
 import { SearchBar } from './features/Search/SearchBar';
+import ProductSection from './features/ProductSection/ProductSection';
 
 function App() {
 	return (
@@ -12,7 +12,7 @@ function App() {
 			<Header />
 			<SearchBar />
 			<Categories />
-			<Section />
+			<ProductSection />
 		</div>
 	);
 }
