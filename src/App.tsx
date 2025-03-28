@@ -1,9 +1,9 @@
 import './App.css';
 import BackgroundGradient from './components/BackgroundGradient';
-import Header from './components/Header';
-import { SearchBar } from './features/Search/SearchBar';
-import ProductSection from './features/ProductSection/ProductSection';
-import Categories from './features/Categories/Categories';
+import { SearchBar } from './features/SearchBar';
+import ProductSection from './features/ProductSection';
+import Categories from './features/Categories';
+import Header from './features/Header';
 
 function App() {
 	return (

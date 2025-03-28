@@ -1,12 +1,12 @@
-import ProductCard from '../../components/ProductCard/ProductCard';
-import organicFruitImage1 from '../../assets/1.jpg';
-import organicFruitImage2 from '../../assets/2.jpg';
-import organicFruitImage3 from '../../assets/3.jpg';
-import organicFruitImage4 from '../../assets/4.jpg';
-import organicFruitImage5 from '../../assets/5.jpg';
-import organicFruitImage6 from '../../assets/6.jpg';
-import organicFruitImage7 from '../../assets/7.jpg';
-import organicFruitImage8 from '../../assets/8.jpg';
+import ProductCard from '../components/ProductCard/ProductCard';
+import organicFruitImage1 from '../assets/1.jpg';
+import organicFruitImage2 from '../assets/2.jpg';
+import organicFruitImage3 from '../assets/3.jpg';
+import organicFruitImage4 from '../assets/4.jpg';
+import organicFruitImage5 from '../assets/5.jpg';
+import organicFruitImage6 from '../assets/6.jpg';
+import organicFruitImage7 from '../assets/7.jpg';
+import organicFruitImage8 from '../assets/8.jpg';
 
 const products = [
 	{
