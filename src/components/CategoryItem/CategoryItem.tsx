@@ -1,6 +1,7 @@
-import CategoryIcon from '../CategoryIcon';
+import CategoryIcon from '../UI/CategoryIcon';
+import { CategoryItemProps } from './types';
 
-export default function CategoryItem({ title, Icon }) {
+export default function CategoryItem({ title, Icon }: CategoryItemProps) {
 	return (
 		<div className='flex flex-col items-center gap-2'>
 			<CategoryIcon Icon={Icon} />

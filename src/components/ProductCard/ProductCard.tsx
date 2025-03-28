@@ -1,7 +1,8 @@
-import StarRating from '../StarRating';
-import Button from '../Button';
+import StarRating from '../UI/StarRating';
+import Button from '../UI/Button';
+import { ProductCardProps } from './types';
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product }: ProductCardProps) {
 	return (
 		<div className='bg-white rounded-2xl shadow-xl w-full flex flex-col items-center transition-transform duration-300 transform hover:-translate-y-2 justify-end mb-3'>
 			<div className='w-full h-48 overflow-hidden rounded-t-xl'>

@@ -1,7 +1,7 @@
 import { LuIceCreamCone } from 'react-icons/lu';
 import { RiCake3Line } from 'react-icons/ri';
 import { RiDrinks2Line } from 'react-icons/ri';
-import CategoryItem from '../components/UI/CategoryItem/CategoryItem';
+import CategoryItem from '../components/CategoryItem/CategoryItem';
 
 const CATEGORIES = [
 	{ id: 1, title: 'Flavours', emoji: LuIceCreamCone },
