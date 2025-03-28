@@ -1,4 +1,4 @@
-import BackgroundGradient from '../components/BackgroundGradient';
+import BackgroundGradient from '../components/UI/BackgroundGradient';
 import StyledTitle from '../components/UI/StylesTitle';
 
 export default function Header() {
