@@ -11,7 +11,7 @@ export default function Search() {
 	return (
 		<>
 			<div className='relative z-10 mt-8 max-w-xl w-full text-pink-700 rounded-xl flex items-center space-x-2 md:space-x-3'>
-				<div className='relative flex-grow shadow-xl rounded-xl overflow-hidden'>
+				<div className='relative flex-grow shadow-xl rounded-xl'>
 					<IoMdSearch
 						size={21}
 						className='absolute left-4 top-1/2 transform -translate-y-1/2 text-pink-700 cursor-pointer h-full hover:drop-shadow-xl duration-300 hover:text-pink-800 hover:scale-110 active:scale-90'
