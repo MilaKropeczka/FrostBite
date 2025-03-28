@@ -1,4 +1,4 @@
-import CategoryIcon from '../UI/CategoryIcon';
+import CategoryIcon from './UI/CategoryIcon';
 
 export default function CategoryItem({ title, Icon }) {
 	return (
