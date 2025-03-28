@@ -11,7 +11,7 @@ export default function Categories() {
 	];
 
 	return (
-		<div className='relative z-10 mt-8 max-w-xl w-full'>
+		<nav className='relative z-10 mt-8 max-w-xl w-full'>
 			<div className='w-full flex gap-4 justify-center'>
 				{CATEGORIES.map((item) => (
 					<div
@@ -26,6 +26,6 @@ export default function Categories() {
 					</div>
 				))}
 			</div>
-		</div>
+		</nav>
 	);
 }

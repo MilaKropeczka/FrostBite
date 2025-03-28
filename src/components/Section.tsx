@@ -69,7 +69,7 @@ const products = [
 
 export default function Section() {
 	return (
-		<section className='flex flex-col items-center px-2 sm:px-4 w-full'>
+		<main className='flex flex-col items-center px-2 sm:px-4 w-full'>
 			<h2 className='text-xl tracking-tight mt-12 px-4 sm:px-0 font-semibold relative bg-gradient-to-r from-pink-700 to-pink-950 text-transparent bg-clip-text inline-block'>
 				Popular
 			</h2>
@@ -115,6 +115,6 @@ export default function Section() {
 					</div>
 				))}
 			</div>
-		</section>
+		</main>
 	);
 }
