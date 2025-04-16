@@ -1,6 +1,6 @@
-import StarRating from '../UI/StarRating';
-import Button from '../UI/Button';
-import { ProductCardProps } from './types';
+import StarRating from '@/components/UI/StarRating';
+import Button from '@/components/UI/Button';
+import { ProductCardProps } from '@/components/ProductCard/types';
 
 export default function ProductCard({ product }: ProductCardProps) {
 	return (

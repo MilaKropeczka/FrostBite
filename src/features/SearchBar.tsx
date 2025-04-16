@@ -1,6 +1,6 @@
-import { SearchInput } from '../components/UI/SearchInput';
-import { SettingsButton } from '../components/UI/SettingsButton';
-import { IconButton } from '../components/UI/IconButton';
+import { SearchInput } from '@/components/UI/SearchInput';
+import { SettingsButton } from '@/components/UI/SettingsButton';
+import { IconButton } from '@/components/UI/IconButton';
 import { FaCartShopping, FaHeart } from 'react-icons/fa6';
 
 const icons = [

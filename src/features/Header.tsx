@@ -1,7 +1,7 @@
-import BackgroundGradient from '../components/UI/BackgroundGradient';
-import StyledTitle from '../components/UI/StylesTitle';
+import BackgroundGradient from '@/components/UI/BackgroundGradient';
+import StyledTitle from '@/components/UI/StylesTitle';
 
-export default function Header() {
+export function Header() {
 	return (
 		<>
 			<BackgroundGradient />

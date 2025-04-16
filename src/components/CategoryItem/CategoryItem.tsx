@@ -1,5 +1,5 @@
-import CategoryIcon from '../UI/CategoryIcon';
-import { CategoryItemProps } from './types';
+import CategoryIcon from '@/components/UI/CategoryIcon';
+import { CategoryItemProps } from '@/components/CategoryItem/types';
 
 export default function CategoryItem({ title, Icon }: CategoryItemProps) {
 	return (

@@ -1,12 +1,12 @@
-import ProductCard from '../components/ProductCard/ProductCard';
-import organicFruitImage1 from '../assets/1.jpg';
-import organicFruitImage2 from '../assets/2.jpg';
-import organicFruitImage3 from '../assets/3.jpg';
-import organicFruitImage4 from '../assets/4.jpg';
-import organicFruitImage5 from '../assets/5.jpg';
-import organicFruitImage6 from '../assets/6.jpg';
-import organicFruitImage7 from '../assets/7.jpg';
-import organicFruitImage8 from '../assets/8.jpg';
+import ProductCard from '@/components/ProductCard/ProductCard';
+import organicFruitImage1 from '@/assets/1.jpg';
+import organicFruitImage2 from '@/assets/2.jpg';
+import organicFruitImage3 from '@/assets/3.jpg';
+import organicFruitImage4 from '@/assets/4.jpg';
+import organicFruitImage5 from '@/assets/5.jpg';
+import organicFruitImage6 from '@/assets/6.jpg';
+import organicFruitImage7 from '@/assets/7.jpg';
+import organicFruitImage8 from '@/assets/8.jpg';
 
 const products = [
 	{
@@ -67,7 +67,7 @@ const products = [
 	},
 ];
 
-export default function ProductSection() {
+export function ProductSection() {
 	return (
 		<main className='flex flex-col items-center px-2 sm:px-4 w-full'>
 			<h2 className='text-xl tracking-tight mt-12 px-4 sm:px-0 font-semibold relative bg-gradient-to-r from-pink-700 to-pink-950 text-transparent bg-clip-text inline-block'>
