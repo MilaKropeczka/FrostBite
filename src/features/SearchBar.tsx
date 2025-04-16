@@ -2,10 +2,11 @@ import { SearchInput } from '@/components/UI/SearchInput';
 import { SettingsButton } from '@/components/UI/SettingsButton';
 import { IconButton } from '@/components/UI/IconButton';
 import { FaCartShopping, FaHeart } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 const icons = [
-	{ id: 1, Component: FaHeart },
-	{ id: 2, Component: FaCartShopping },
+	{ id: 1, Component: FaHeart, to: 'favorites' },
+	{ id: 2, Component: FaCartShopping, to: 'cart' },
 ];
 
 export const SearchBar = () => {
@@ -16,8 +17,10 @@ export const SearchBar = () => {
 				<SettingsButton />
 			</div>
 			<div className='flex items-center space-x-2 sm:space-x-3 h-full'>
-				{icons.map(({ id, Component }) => (
-					<IconButton key={id} Icon={Component} />
+				{icons.map(({ id, Component, to }) => (
+					<Link key={id} to={to}>
+						<IconButton Icon={Component} />
+					</Link>
 				))}
 			</div>
 		</nav>
