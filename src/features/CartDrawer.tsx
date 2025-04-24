@@ -1,5 +1,6 @@
-import { X, MoveRight } from 'lucide-react';
+import { X, MoveRight, Minus, Plus, Trash2 } from 'lucide-react';
 import img1 from '@/assets/1.jpg';
+import { Link } from 'react-router-dom';
 
 type CartDrawerProps = {
 	isOpen: boolean;
@@ -38,9 +39,28 @@ export function CartDrawer({ isOpen, closeDrawer }: CartDrawerProps) {
 						<span className='font-medium text-pink-800'>
 							Product Name
 						</span>
-						<span className='text-sm text-gray-600'>$23</span>
+						<div className='flex items-center gap-2 mt-2'>
+							<button
+								onClick={() => console.log('object')}
+								className='bg-pink-200 text-pink-800 p-1 rounded hover:bg-pink-300 cursor-pointer transition duration-300'>
+								<Minus size={16} />
+							</button>
+							<span className='w-6 text-center'>2</span>
+							<button
+								onClick={() => console.log(`object`)}
+								className='bg-pink-200 text-pink-800 p-1 rounded hover:bg-pink-300 cursor-pointer transition duration-300'>
+								<Plus size={16} />
+							</button>
+						</div>
 					</div>
 					<span className='font-semibold text-pink-900'>$12</span>
+
+					<span className='font-semibold text-pink-900'>
+						<Trash2
+							size={20}
+							className='hover:text-pink-700 transition duration-300 hover:scale-105'
+						/>
+					</span>
 				</div>
 			</div>
 
@@ -49,10 +69,12 @@ export function CartDrawer({ isOpen, closeDrawer }: CartDrawerProps) {
 					<span>Total:</span>
 					<span>{totalPrice.toFixed(2)} $</span>
 				</div>
-				<button className='mt-4 text-white py-3 w-3/4 rounded-xl bg-gradient-to-l from-pink-700 to-pink-800 hover:brightness-110 font-semibold transition-all duration-300 active:scale-95 cursor-pointer flex items-center justify-center mx-auto'>
+				<Link
+					to={'/cart'}
+					className='mt-4 text-white py-3 w-3/4 rounded-xl bg-gradient-to-l from-pink-700 to-pink-800 hover:brightness-110 font-semibold transition-all duration-300 active:scale-95 cursor-pointer flex items-center justify-center mx-auto'>
 					<span>Proceed to Payment</span>
 					<MoveRight className='ml-2 text-white' />
-				</button>
+				</Link>
 			</div>
 		</div>
 	);
