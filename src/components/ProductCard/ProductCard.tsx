@@ -25,6 +25,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 				</div>
 			</Link>
 			<Button
+				className='w-full'
 				onClick={() => {
 					alert('dodaje do koszyka');
 				}}>

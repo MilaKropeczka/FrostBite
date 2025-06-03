@@ -9,7 +9,7 @@ export const SearchInput = ({ placeholder = 'Search foodstuffs' }) => (
 		<input
 			type='text'
 			placeholder={placeholder}
-			className='w-full bg-white px-12 py-3 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-pink-700 border border-pink-200 leading-none'
+			className='w-full bg-white px-12 py-3 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-pink-700 leading-none'
 		/>
 	</div>
 );
