@@ -2,7 +2,7 @@ import { FaStar } from 'react-icons/fa';
 
 export default function StarRating({ rating }) {
 	return (
-		<div className='flex items-center justify-center gap-1 text-pink-500'>
+		<div className='flex items-center justify-center gap-1 text-pink-700'>
 			{[...Array(rating)].map((_, index) => (
 				<FaStar key={index} className='text-md' />
 			))}
