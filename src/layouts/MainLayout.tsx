@@ -2,7 +2,7 @@ import { SearchBar } from '@/features/SearchBar';
 import { Categories } from '@/features/Categories';
 import { Header } from '@/features/Header';
 import { Outlet } from 'react-router';
-import { CartDrawer } from '@/features/CartDrawer';
+import { CartDrawer } from '@/features/cart';
 import { useCartDrawer } from '@/hooks/useCartDrawer';
 
 export function MainLayout() {

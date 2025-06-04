@@ -1,7 +1,6 @@
 import Img1 from '@/assets/1.jpg';
 import Button from '@/components/UI/Button';
-import { Link } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import BackButton from '@/components/UI/BackButton';
 
 export function ProductView() {
 	return (
@@ -12,13 +11,7 @@ export function ProductView() {
 					alt='iceCream'
 					className='w-full h-full object-cover transition-transform duration-300 hover:scale-105'
 				/>
-
-				<Link
-					to='/'
-					className='absolute top-4 left-4 flex items-center gap-2 bg-white bg-opacity-70 rounded-full px-5 py-1 shadow-xl text-pink-700 hover:bg-opacity-90 hover:text-pink-900 font-semibold cursor-pointer'>
-					<FiArrowLeft size={20} />
-					<span className='leading-relaxed'>Back</span>
-				</Link>
+				<BackButton to='/' />
 			</div>
 
 			<div className='w-full md:flex-1 flex flex-col justify-center gap-y-4 px-8 py-6'>

@@ -9,7 +9,7 @@ export default function StarRating({ rating }) {
 			{[...Array(5 - rating)].map((_, index) => (
 				<FaStar key={index} className='text-md text-gray-300' />
 			))}
-			<span>4.2</span>
+			<span>{rating}</span>
 		</div>
 	);
 }
