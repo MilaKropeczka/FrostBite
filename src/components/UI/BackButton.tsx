@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
-export default function BackButton({ to = '/', label = 'Back' }) {
+export function BackButton({ to = '/', label = 'Back' }) {
 	return (
 		<Link
 			to={to}

@@ -1,9 +1,9 @@
 import { RouteObject } from 'react-router-dom';
 import { MainLayout } from '@/layouts/MainLayout';
-import { ProductSection } from '@/features/product/ProductSection/ProductSection';
-import { Favorites } from '@/features/Favorites';
+import { ProductSection } from '@/features/products';
+import { Favorites } from '@/features/favorites';
 import { Cart } from '@/features/cart';
-import { ProductView } from '@/features/product/ProductView/ProductView';
+import { ProductView } from '@/features/products';
 
 export const routes: RouteObject[] = [
 	{

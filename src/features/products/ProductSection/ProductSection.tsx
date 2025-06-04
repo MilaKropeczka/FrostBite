@@ -1,4 +1,4 @@
-import { ProductCard } from '@/features/product';
+import { ProductCard } from '@/features/products';
 import { products } from '@/data/products';
 
 export function ProductSection() {

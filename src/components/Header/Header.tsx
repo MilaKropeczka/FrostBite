@@ -1,5 +1,5 @@
-import BackgroundGradient from '@/components/UI/BackgroundGradient';
-import StyledTitle from '@/components/UI/StylesTitle';
+import { BackgroundGradient } from '@/components/UI';
+import { StyledTitle } from '@/components/UI';
 import { Link } from 'react-router-dom';
 
 export function Header() {

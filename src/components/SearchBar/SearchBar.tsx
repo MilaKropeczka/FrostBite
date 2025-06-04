@@ -1,6 +1,6 @@
-import { SearchInput } from '@/components/UI/SearchInput';
-import { SettingsButton } from '@/components/UI/SettingsButton';
-import { IconButton } from '@/components/UI/IconButton';
+import { SearchInput } from '@/components/UI';
+import { SettingsButton } from '@/components/UI';
+import { IconButton } from '@/components/UI';
 import { FaCartShopping, FaHeart } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 

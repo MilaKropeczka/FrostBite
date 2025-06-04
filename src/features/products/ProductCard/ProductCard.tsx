@@ -1,9 +1,9 @@
-import Button from '@/components/UI/Button';
+import { Button } from '@/components/UI';
 import {
 	ProductCardProps,
 	ProductImage,
 	ProductInfo,
-} from '@/features/product';
+} from '@/features/products';
 import { Link } from 'react-router-dom';
 
 export function ProductCard({ product }: ProductCardProps) {

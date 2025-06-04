@@ -1,6 +1,6 @@
 import Img1 from '@/assets/1.jpg';
-import Button from '@/components/UI/Button';
-import BackButton from '@/components/UI/BackButton';
+import { Button } from '@/components/UI';
+import { BackButton } from '@/components/UI';
 
 export function ProductView() {
 	return (

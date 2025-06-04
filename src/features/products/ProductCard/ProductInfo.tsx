@@ -1,4 +1,4 @@
-import StarRating from '@/components/UI/StarRating';
+import { StarRating } from '@/components/UI';
 
 export function ProductInfo({
 	name,

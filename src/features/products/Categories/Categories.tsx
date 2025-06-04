@@ -1,7 +1,7 @@
 import { LuIceCreamCone } from 'react-icons/lu';
 import { RiCake3Line } from 'react-icons/ri';
 import { RiDrinks2Line } from 'react-icons/ri';
-import CategoryItem from '@/components/CategoryItem/CategoryItem';
+import { CategoryItem } from '@/components/CategoryItem';
 import { Link } from 'react-router-dom';
 
 const CATEGORIES = [
