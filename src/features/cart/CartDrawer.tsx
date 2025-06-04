@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 type CartDrawerProps = {
 	isOpen: boolean;
-	closeDrawer: () => void;
+	toggleDrawer: () => void;
 };
 
-export function CartDrawer({ isOpen, closeDrawer }: CartDrawerProps) {
+export function CartDrawer({ isOpen, toggleDrawer }: CartDrawerProps) {
 	const totalPrice = 250;
 
 	return (
 		<div
-			className={`fixed top-0 right-0 h-full w-100 bg-gray-100/70 backdrop-blur-lg shadow-xl px-4 py-2 flex flex-col z-50 rounded-l-2xl transition-transform duration-300 ease-in-out ${
+			className={`fixed top-0 right-0 h-full w-full md:w-100 bg-gray-100/70 backdrop-blur-lg shadow-xl px-4 py-2 flex flex-col z-50 rounded-l-2xl transition-transform duration-300 ease-in-out ${
 				isOpen ? 'translate-x-0' : 'translate-x-full'
 			}`}>
 			<div className='flex items-center justify-between mb-6'>
@@ -20,7 +20,7 @@ export function CartDrawer({ isOpen, closeDrawer }: CartDrawerProps) {
 					Your Cart
 				</h2>
 				<button
-					onClick={closeDrawer}
+					onClick={toggleDrawer}
 					className='cursor-pointer transition-transform duration-300 hover:-translate-y-1'>
 					<X className='w-6 h-6 text-pink-900 hover:text-pink-700' />
 				</button>
