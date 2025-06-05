@@ -1,6 +1,4 @@
-import { SearchInput } from '@/components/UI';
-import { SettingsButton } from '@/components/UI';
-import { IconButton } from '@/components/UI';
+import { SearchInput, SettingsButton, IconButton } from '@/components/UI';
 import { FaCartShopping, FaHeart } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
@@ -9,30 +7,43 @@ type SearchBarProps = {
 };
 
 const icons = [
-	{ id: 1, Component: FaHeart, to: 'favorites' },
-	{ id: 2, Component: FaCartShopping, to: 'cart' },
+	{ id: 1, Icon: FaHeart, to: 'favorites', isButton: false },
+	{ id: 2, Icon: FaCartShopping, to: 'cart', isButton: true },
 ];
 
-export const SearchBar = ({ toggleDrawer }: SearchBarProps) => {
-	return (
+const renderIcon = (
+	Icon: React.ElementType,
+	to: string,
+	isButton: boolean,
+	toggleDrawer: () => void
+) => {
+	const content = <IconButton Icon={Icon} />;
+	return isButton ? (
+		<button onClick={toggleDrawer}>{content}</button>
+	) : (
+		<Link to={to}>{content}</Link>
+	);
+};
+
+export const SearchBar = ({ toggleDrawer }: SearchBarProps) => (
+	<>
+		<div className='absolute top-4 right-4 z-50 flex space-x-3 md:hidden'>
+			{icons.map(({ Icon, to, isButton }) =>
+				renderIcon(Icon, to, isButton, toggleDrawer)
+			)}
+		</div>
+
 		<nav className='relative z-10 mt-8 max-w-xl w-full text-pink-700 rounded-xl flex items-center space-x-2 md:space-x-3'>
 			<div className='relative flex-grow'>
 				<SearchInput />
 				<SettingsButton />
 			</div>
-			<div className='flex items-center space-x-2 sm:space-x-3 h-full'>
-				{icons.map(({ id, Component, to }) =>
-					to === 'cart' ? (
-						<button key={id} onClick={toggleDrawer}>
-							<IconButton Icon={Component} />
-						</button>
-					) : (
-						<Link key={id} to={to}>
-							<IconButton Icon={Component} />
-						</Link>
-					)
+
+			<div className='hidden md:flex w-auto justify-end items-center space-x-4'>
+				{icons.map(({ Icon, to, isButton }) =>
+					renderIcon(Icon, to, isButton, toggleDrawer)
 				)}
 			</div>
 		</nav>
-	);
-};
+	</>
+);

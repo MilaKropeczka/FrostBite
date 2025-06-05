@@ -16,7 +16,7 @@ export function Favorites() {
 					{products.map((product) => (
 						<li
 							key={product.id}
-							className='relative bg-white rounded-2xl shadow-2xl flex items-center gap-4 hover:-translate-y-1 duration-300'>
+							className='relative bg-white rounded-2xl shadow-2xl flex items-center md:gap-4 hover:-translate-y-1 duration-300'>
 							<ProductImage
 								name={product.name}
 								image={product.image}
@@ -36,7 +36,7 @@ export function Favorites() {
 								/>
 								<div className='flex justify-center mt-4'>
 									<Button
-										className='sm:w-65 xl:w-85'
+										className='w-60 sm:w-65 xl:w-85'
 										onClick={() =>
 											alert(
 												`Dodano ${product.name} do koszyka`

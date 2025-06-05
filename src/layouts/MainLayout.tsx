@@ -8,7 +8,7 @@ import { ProductFilterProvider } from '@/contexts/ProductFilterContext';
 export function MainLayout() {
 	const { isOpen, toggleDrawer } = useCartDrawer();
 	return (
-		<div className='w-full min-h-screen flex flex-col items-center bg-gray-100'>
+		<div className='w-full min-h-screen flex flex-col items-center bg-gray-100 px-4'>
 			<Header />
 			<SearchBar toggleDrawer={toggleDrawer} />
 			<ProductFilterProvider>
