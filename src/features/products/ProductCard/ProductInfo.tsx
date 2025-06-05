@@ -11,7 +11,9 @@ export function ProductInfo({
 }) {
 	return (
 		<div className='text-center p-3'>
-			<p className='text-pink-700 font-semibold text-lg'>{name}</p>
+			<p className='text-pink-700 font-semibold text-lg cursor-pointer'>
+				{name}
+			</p>
 			<StarRating rating={stars} />
 			<span className='text-gray-700 text-lg font-bold mt-1 block'>
 				{price}
