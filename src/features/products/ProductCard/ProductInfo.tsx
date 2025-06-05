@@ -10,7 +10,7 @@ export function ProductInfo({
 	price: string;
 }) {
 	return (
-		<div className='text-center p-3'>
+		<div className='text-center py-3'>
 			<p className='text-pink-700 font-semibold text-lg cursor-pointer'>
 				{name}
 			</p>

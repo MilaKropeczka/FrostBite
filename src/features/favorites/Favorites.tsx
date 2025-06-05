@@ -20,15 +20,15 @@ export function Favorites() {
 							<ProductImage
 								name={product.name}
 								image={product.image}
-								className='rounded-r-none rounded-l-2xl aspect-[3/4] md:aspect-[19/20]'
+								className='rounded-r-none rounded-l-2xl aspect-[17/20] md:aspect-[19/20]'
 							/>
-							<div className='absolute top-2 right-2'>
+							<div className='absolute top-2 right-2 flex-1'>
 								<BsFillBookmarkCheckFill
 									size={24}
 									className='text-pink-800 hover:text-pink-900 duration-300 cursor-pointer'
 								/>
 							</div>
-							<div className='flex-1'>
+							<div className='flex-1 w-56 md:w-auto'>
 								<ProductInfo
 									name={product.name}
 									stars={4}
@@ -36,7 +36,7 @@ export function Favorites() {
 								/>
 								<div className='flex justify-center mt-4'>
 									<Button
-										className='w-60 sm:w-65 xl:w-85'
+										className='w-60 sm:w-65 xl:w-85 !p-2'
 										onClick={() =>
 											alert(
 												`Dodano ${product.name} do koszyka`
