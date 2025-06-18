@@ -4,6 +4,7 @@ import { Outlet } from 'react-router';
 import { CartDrawer } from '@/features/cart';
 import { useCartDrawer } from '@/hooks/useCartDrawer';
 import { ProductFilterProvider } from '@/contexts/ProductFilterContext';
+import { products } from '@/data';
 
 export function MainLayout() {
 	const { isOpen, toggleDrawer } = useCartDrawer();

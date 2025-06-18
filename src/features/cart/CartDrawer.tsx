@@ -1,14 +1,22 @@
 import { X, MoveRight, Minus, Plus, Trash2 } from 'lucide-react';
-import img1 from '@/assets/1.jpg';
 import { Link } from 'react-router-dom';
+import { Product } from '@/features/products';
+import { useMemo } from 'react';
 
 type CartDrawerProps = {
 	isOpen: boolean;
 	toggleDrawer: () => void;
+	products: Product[];
 };
 
-export function CartDrawer({ isOpen, toggleDrawer }: CartDrawerProps) {
-	const totalPrice = 250;
+export function CartDrawer({
+	isOpen,
+	toggleDrawer,
+	products,
+}: CartDrawerProps) {
+	const totalPrice = useMemo(() => {
+		return products.reduce((sum, product) => sum + product.price, 0);
+	}, [products]);
 
 	return (
 		<div
@@ -27,41 +35,46 @@ export function CartDrawer({ isOpen, toggleDrawer }: CartDrawerProps) {
 			</div>
 
 			<div className='flex-1 overflow-y-auto space-y-3 p-4 -m-4'>
-				<div
-					key={15454}
-					className='flex items-center gap-4 p-2 rounded-2xl bg-white/80 shadow-xl hover:-translate-y-1 duration-300 transition cursor-pointer'>
-					<img
-						src={img1}
-						alt={'product'}
-						className='w-16 h-16 object-cover rounded-xl'
-					/>
-					<div className='flex flex-col flex-1'>
-						<span className='font-medium text-pink-800'>
-							Product Name
-						</span>
-						<div className='flex items-center gap-2 mt-2'>
-							<button
-								onClick={() => console.log('object')}
-								className='bg-pink-200 text-pink-800 p-1 rounded hover:bg-pink-300 cursor-pointer transition duration-300'>
-								<Minus size={16} />
-							</button>
-							<span className='w-6 text-center'>2</span>
-							<button
-								onClick={() => console.log(`object`)}
-								className='bg-pink-200 text-pink-800 p-1 rounded hover:bg-pink-300 cursor-pointer transition duration-300'>
-								<Plus size={16} />
-							</button>
-						</div>
-					</div>
-					<span className='font-semibold text-pink-900'>$12</span>
-
-					<span className='font-semibold text-pink-900'>
-						<Trash2
-							size={20}
-							className='hover:text-pink-700 transition duration-300 hover:scale-105'
+				{products.map((product) => (
+					<div
+						key={15454}
+						className='flex items-center gap-4 p-2 rounded-2xl bg-white/80 shadow-xl hover:-translate-y-1 duration-300 transition cursor-pointer'>
+						<img
+							src={product.image}
+							alt={product.name}
+							className='w-16 h-16 object-cover rounded-xl'
 						/>
-					</span>
-				</div>
+						<div className='flex flex-col flex-1'>
+							<span className='font-medium text-pink-800'>
+								{product.name}
+							</span>
+							<div className='flex items-center gap-2 mt-2'>
+								<button
+									onClick={() => console.log('object')}
+									className='bg-pink-200 text-pink-800 p-1 rounded hover:bg-pink-300 cursor-pointer transition duration-300'>
+									<Minus size={16} />
+								</button>
+								<span className='w-6 text-center'>2</span>
+								<button
+									onClick={() => console.log(`object`)}
+									className='bg-pink-200 text-pink-800 p-1 rounded hover:bg-pink-300 cursor-pointer transition duration-300'>
+									<Plus size={16} />
+								</button>
+							</div>
+						</div>
+						<span className='font-semibold text-pink-900'>
+							${product.price}
+							{/* {product.price * product.quantity} */}
+						</span>
+
+						<span className='font-semibold text-pink-900'>
+							<Trash2
+								size={20}
+								className='hover:text-pink-700 transition duration-300 hover:scale-105'
+							/>
+						</span>
+					</div>
+				))}
 			</div>
 
 			<div className='mt-6 border-t pt-2 border-pink-900'>

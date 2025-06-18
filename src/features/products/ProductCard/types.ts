@@ -4,12 +4,12 @@ export enum Category {
 	Desserts = 'Desserts',
 }
 
-interface Product {
+export interface Product {
 	image: string;
 	name: string;
 	category: Category;
 	stars: number;
-	price: string;
+	price: number;
 }
 
 export interface ProductCardProps {

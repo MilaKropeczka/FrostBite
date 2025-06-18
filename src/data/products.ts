@@ -14,7 +14,7 @@ export const products = [
 		name: 'Chocolate',
 		category: Category.Flavours,
 		image: organicFruitImage1,
-		price: '$5.90',
+		price: 5.9,
 		stars: 4,
 	},
 	{
@@ -22,7 +22,7 @@ export const products = [
 		name: 'Strawberry',
 		category: Category.Flavours,
 		image: organicFruitImage2,
-		price: '$4.10',
+		price: 4.1,
 		stars: 5,
 	},
 	{
@@ -30,7 +30,7 @@ export const products = [
 		name: 'Mint',
 		category: Category.Flavours,
 		image: organicFruitImage3,
-		price: '$3.99',
+		price: 3.99,
 		stars: 3,
 	},
 	{
@@ -38,7 +38,7 @@ export const products = [
 		name: 'Banana',
 		category: Category.Flavours,
 		image: organicFruitImage4,
-		price: '$3.99',
+		price: 3.99,
 		stars: 5,
 	},
 	{
@@ -46,7 +46,7 @@ export const products = [
 		name: 'Blueberry',
 		category: Category.Flavours,
 		image: organicFruitImage5,
-		price: '$3.59',
+		price: 3.59,
 		stars: 5,
 	},
 	{
@@ -54,7 +54,7 @@ export const products = [
 		name: 'Waffles',
 		category: Category.Desserts,
 		image: organicFruitImage6,
-		price: '$3.99',
+		price: 3.99,
 		stars: 5,
 	},
 	{
@@ -62,7 +62,7 @@ export const products = [
 		name: 'Waffles',
 		category: Category.Desserts,
 		image: organicFruitImage7,
-		price: '$3.59',
+		price: 3.59,
 		stars: 5,
 	},
 	{
@@ -70,7 +70,7 @@ export const products = [
 		name: 'Waffles',
 		category: Category.Desserts,
 		image: organicFruitImage8,
-		price: '$2.89',
+		price: 2.89,
 		stars: 5,
 	},
 ];

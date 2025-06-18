@@ -7,7 +7,7 @@ export function ProductInfo({
 }: {
 	name: string;
 	stars: number;
-	price: string;
+	price: number;
 }) {
 	return (
 		<div className='text-center py-3'>
