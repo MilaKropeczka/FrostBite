@@ -1,25 +1,14 @@
 import { Button } from '@/components/UI';
 import { BackButton } from '@/components/UI';
 import { useParams } from 'react-router-dom';
-import { useShopSlice } from '@/store/useShopSlice';
-import { useCartDrawerStore } from '@/store/useCartDrawerStore';
 import { products } from '@/data/products';
+import { useAddToCart } from '@/hooks/useAddToCart';
 
 export function ProductView() {
 	const { productId } = useParams<{ productId: string }>();
 	const id = Number(productId);
-	const { addToCart, setHighlightedId } = useShopSlice();
-	const { openCart } = useCartDrawerStore();
-
 	const product = products.find((p) => p.id === id);
-
-	function handleAddCart() {
-		if (!product) return;
-		const cartProduct = { ...product, quantity: 1 };
-		addToCart(cartProduct);
-		openCart();
-		setHighlightedId(id);
-	}
+	const handleAddCart = useAddToCart();
 
 	if (!product) {
 		return <div>Produkt nie znaleziony</div>;
@@ -62,7 +51,7 @@ export function ProductView() {
 
 				<Button
 					className='mt-6 w-full sm:w-1/2 px-6 py-3 text-base font-semibold shadow-xl'
-					onClick={handleAddCart}>
+					onClick={() => handleAddCart(product)}>
 					Purchase Now
 				</Button>
 			</div>

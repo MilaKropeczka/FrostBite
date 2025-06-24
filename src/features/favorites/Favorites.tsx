@@ -2,8 +2,11 @@ import { ProductImage, ProductInfo } from '@/features/products';
 import { Button } from '@/components/UI';
 import { products } from '@/data';
 import { BsFillBookmarkCheckFill } from 'react-icons/bs';
+import { useAddToCart } from '@/hooks/useAddToCart';
 
 export function Favorites() {
+	const handleAddCart = useAddToCart();
+
 	return (
 		<>
 			<h2 className='text-2xl font-bold mt-12 mb-6'>
@@ -37,12 +40,8 @@ export function Favorites() {
 								<div className='flex justify-center mt-4'>
 									<Button
 										className='w-60 sm:w-65 xl:w-85 !p-2'
-										onClick={() =>
-											alert(
-												`Dodano ${product.name} do koszyka`
-											)
-										}>
-										Dodaj do koszyka
+										onClick={() => handleAddCart(product)}>
+										Add to cart
 									</Button>
 								</div>
 							</div>
