@@ -1,13 +1,35 @@
-import Img1 from '@/assets/1.jpg';
 import { Button } from '@/components/UI';
 import { BackButton } from '@/components/UI';
+import { useParams } from 'react-router-dom';
+import { useShopSlice } from '@/store/useShopSlice';
+import { useCartDrawerStore } from '@/store/useCartDrawerStore';
+import { products } from '@/data/products';
 
 export function ProductView() {
+	const { productId } = useParams<{ productId: string }>();
+	const id = Number(productId);
+	const { addToCart, setHighlightedId } = useShopSlice();
+	const { openCart } = useCartDrawerStore();
+
+	const product = products.find((p) => p.id === id);
+
+	function handleAddCart() {
+		if (!product) return;
+		const cartProduct = { ...product, quantity: 1 };
+		addToCart(cartProduct);
+		openCart();
+		setHighlightedId(id);
+	}
+
+	if (!product) {
+		return <div>Produkt nie znaleziony</div>;
+	}
+
 	return (
 		<div className='flex flex-col md:flex-row items-center w-full max-w-6xl mx-auto mt-10 gap-10 bg-white shadow-2xl rounded-2xl overflow-hidden mb-10'>
 			<div className='w-full md:w-1/2 overflow-hidden aspect-[19/20] relative'>
 				<img
-					src={Img1}
+					src={product?.image}
 					alt='iceCream'
 					className='w-full h-full object-cover transition-transform duration-300 hover:scale-105'
 				/>
@@ -16,10 +38,12 @@ export function ProductView() {
 
 			<div className='w-full md:flex-1 flex flex-col justify-center gap-y-4 px-8 py-6'>
 				<h2 className='text-2xl font-semibold text-neutral-900'>
-					Chocolate Ice Cream
+					{product?.name}
 				</h2>
 
-				<p className='text-3xl font-bold text-pink-700'>$4.20</p>
+				<p className='text-3xl font-bold text-pink-700'>
+					${product.price}
+				</p>
 
 				<h3 className='text-neutral-600 font-medium'>
 					Indulge in creamy perfection
@@ -38,7 +62,7 @@ export function ProductView() {
 
 				<Button
 					className='mt-6 w-full sm:w-1/2 px-6 py-3 text-base font-semibold shadow-xl'
-					onClick={() => console.log('test')}>
+					onClick={handleAddCart}>
 					Purchase Now
 				</Button>
 			</div>

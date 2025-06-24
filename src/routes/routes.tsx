@@ -16,7 +16,7 @@ export const routes: RouteObject[] = [
 					{ path: '/search', element: <div>filtredSearch</div> },
 					{ path: '/favorites', element: <Favorites /> },
 					{ path: '/cart', element: <Cart /> },
-					{ path: '/product', element: <ProductView /> },
+					{ path: '/product/:productId', element: <ProductView /> },
 				],
 			},
 		],
