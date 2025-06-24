@@ -16,7 +16,7 @@ export function ProductInfo({
 			</p>
 			<StarRating rating={stars} />
 			<span className='text-gray-700 text-lg font-bold mt-1 block'>
-				{price}
+				${price.toFixed(2)}
 			</span>
 		</div>
 	);

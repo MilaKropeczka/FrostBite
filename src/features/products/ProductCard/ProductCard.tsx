@@ -8,9 +8,20 @@ import { Link } from 'react-router-dom';
 import { BsBookmark } from 'react-icons/bs';
 import { BsFillBookmarkCheckFill } from 'react-icons/bs';
 import { useState } from 'react';
+import { useShopSlice } from '@/store/useShopSlice';
+import { useCartDrawerStore } from '@/store/useCartDrawerStore';
 
 export function ProductCard({ product }: ProductCardProps) {
 	const [liked, setLiked] = useState(false);
+	const { addToCart, setHighlightedId } = useShopSlice();
+	const { openCart } = useCartDrawerStore();
+
+	const handleAdd = () => {
+		const cartProduct = { ...product, quantity: 1 };
+		addToCart(cartProduct);
+		setHighlightedId(cartProduct.id);
+		openCart();
+	};
 
 	return (
 		<div className='bg-white rounded-2xl shadow-xl w-full flex flex-col items-center transition-transform duration-300 transform hover:-translate-y-1 justify-end mb-3 relative'>
@@ -39,11 +50,7 @@ export function ProductCard({ product }: ProductCardProps) {
 				/>
 			</Link>
 
-			<Button
-				className='w-full'
-				onClick={() => {
-					alert('dodaje do koszyka');
-				}}>
+			<Button className='w-full' onClick={handleAdd}>
 				Add to cart
 			</Button>
 		</div>
