@@ -4,6 +4,7 @@ import { products } from '@/data';
 import { BsFillBookmarkCheckFill, BsBookmark } from 'react-icons/bs';
 import { useAddToCart } from '@/hooks/useAddToCart';
 import { useShopSlice } from '@/store/useShopSlice';
+import { motion } from 'framer-motion';
 
 export function Favorites() {
 	const handleAddCart = useAddToCart();
@@ -13,7 +14,11 @@ export function Favorites() {
 	const favProducts = products.filter((p) => favorites.includes(p.id));
 
 	return (
-		<>
+		<motion.div
+			initial={{ opacity: 0, y: 50 }}
+			animate={{ opacity: 1, y: 0 }}
+			exit={{ opacity: 0, y: -50 }}
+			transition={{ duration: 0.4 }}>
 			<h2 className='text-2xl font-bold mt-12 mb-6'>
 				Twoje ulubione produkty
 			</h2>
@@ -68,6 +73,6 @@ export function Favorites() {
 					})}
 				</ul>
 			)}
-		</>
+		</motion.div>
 	);
 }
