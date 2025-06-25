@@ -33,6 +33,7 @@ export function Favorites() {
 								key={product.id}
 								className='relative bg-white rounded-2xl shadow-2xl flex items-center md:gap-4 hover:-translate-y-1 duration-300'>
 								<ProductImage
+									id={product.id}
 									name={product.name}
 									image={product.image}
 									className='rounded-r-none rounded-l-2xl aspect-[17/20] md:aspect-[19/20]'

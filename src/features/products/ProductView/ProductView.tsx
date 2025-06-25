@@ -20,7 +20,7 @@ export function ProductView() {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
-			transition={{ duration: 0.4 }}>
+			transition={{ duration: 0.8 }}>
 			<div className='flex flex-col md:flex-row items-center w-full max-w-6xl mx-auto mt-10 gap-10 bg-white shadow-2xl rounded-2xl overflow-hidden mb-10'>
 				<div className='w-full md:w-1/2 overflow-hidden aspect-[19/20] relative'>
 					<img

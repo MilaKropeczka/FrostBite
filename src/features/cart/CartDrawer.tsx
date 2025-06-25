@@ -72,16 +72,15 @@ export function CartDrawer() {
 				) : (
 					<>
 						{cart.map((product) => (
-							<div
+							<Link
+								to={`/product/${product.id}`}
 								key={product.id}
-								className={`
-							flex items-center gap-4 px-2 py-1 rounded-2xl bg-white/80 shadow-xl hover:-translate-y-1 duration-300 transition cursor-pointer
-							${
-								highlightedId === product.id
-									? 'border-2 border-pink-800/80'
-									: 'border-2 border-white/80'
-							}
-						`}>
+								className={`flex items-center gap-4 px-2 py-1 rounded-2xl bg-white/80 shadow-xl hover:-translate-y-1 duration-300 transition cursor-pointer ${
+									highlightedId === product.id
+										? 'border-2 border-pink-800/80'
+										: 'border-2 border-white/80'
+								}
+	`}>
 								<img
 									src={product.image}
 									alt={product.name}
@@ -126,7 +125,7 @@ export function CartDrawer() {
 										className='hover:text-pink-700 transition duration-300 hover:scale-105'
 									/>
 								</button>
-							</div>
+							</Link>
 						))}
 					</>
 				)}

@@ -46,7 +46,11 @@ export function ProductCard({ product }: ProductCardProps) {
 						)}
 					</button>
 
-					<ProductImage name={product.name} image={product.image} />
+					<ProductImage
+						id={product.id}
+						name={product.name}
+						image={product.image}
+					/>
 					<ProductInfo
 						name={product.name}
 						stars={4}
