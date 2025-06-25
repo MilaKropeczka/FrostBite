@@ -7,12 +7,19 @@ import {
 import { Link } from 'react-router-dom';
 import { BsBookmark } from 'react-icons/bs';
 import { BsFillBookmarkCheckFill } from 'react-icons/bs';
-import { useState } from 'react';
 import { useAddToCart } from '@/hooks/useAddToCart';
+import { useShopSlice } from '@/store/useShopSlice';
 
 export function ProductCard({ product }: ProductCardProps) {
-	const [liked, setLiked] = useState(false);
 	const handleAddCart = useAddToCart();
+	const favorites = useShopSlice((s) => s.favorites);
+	const toggleFavorite = useShopSlice((s) => s.toggleFavorite);
+	const isFavorite = favorites.includes(product.id);
+
+	const handleToggleFav = (e: React.MouseEvent) => {
+		e.preventDefault();
+		toggleFavorite(product.id);
+	};
 
 	return (
 		<div className='bg-white rounded-2xl shadow-xl w-full flex flex-col items-center transition-transform duration-300 transform hover:-translate-y-1 justify-end mb-3 relative'>
@@ -20,13 +27,10 @@ export function ProductCard({ product }: ProductCardProps) {
 				key={product.id}
 				to={`/product/${product.id}`}
 				className='w-full'>
-				<div
-					className='absolute top-2 right-2 p-2 rounded-full bg-white/95 hover:bg-pink-100 transition-colors duration-300 z-10'
-					onClick={(e) => {
-						e.preventDefault();
-						setLiked(!liked);
-					}}>
-					{liked ? (
+				<button
+					className='cursor-pointer absolute top-2 right-2 p-2 rounded-full bg-white/95 hover:bg-pink-100 transition-colors duration-300 z-10'
+					onClick={handleToggleFav}>
+					{isFavorite ? (
 						<BsFillBookmarkCheckFill
 							size={24}
 							className='text-pink-800'
@@ -34,7 +38,7 @@ export function ProductCard({ product }: ProductCardProps) {
 					) : (
 						<BsBookmark size={24} className='text-black/70' />
 					)}
-				</div>
+				</button>
 
 				<ProductImage name={product.name} image={product.image} />
 				<ProductInfo

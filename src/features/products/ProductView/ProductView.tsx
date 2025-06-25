@@ -31,7 +31,7 @@ export function ProductView() {
 				</h2>
 
 				<p className='text-3xl font-bold text-pink-700'>
-					${product.price}
+					${product.price.toFixed(2)}
 				</p>
 
 				<h3 className='text-neutral-600 font-medium'>

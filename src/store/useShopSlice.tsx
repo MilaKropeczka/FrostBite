@@ -7,6 +7,7 @@ type CartProduct = Product & { quantity: number };
 type State = {
 	cart: CartProduct[];
 	highlightedId: number | null;
+	favorites: number[];
 };
 
 type Actions = {
@@ -14,11 +15,13 @@ type Actions = {
 	decrementToCart: (product: CartProduct) => void;
 	removeToCart: (id: number) => void;
 	setHighlightedId: (id: number | null) => void;
+	toggleFavorite: (id: number) => void;
 };
 
 const initialState: State = {
 	cart: [],
 	highlightedId: null,
+	favorites: [],
 };
 
 export const useShopSlice = create<State & Actions>()(
@@ -84,6 +87,15 @@ export const useShopSlice = create<State & Actions>()(
 				}));
 			},
 			setHighlightedId: (id) => set({ highlightedId: id }),
+			toggleFavorite: (id) =>
+				set((state) => {
+					const isFav = state.favorites.includes(id);
+					const favorites = isFav
+						? state.favorites.filter((favId) => favId !== id)
+						: [...state.favorites, id];
+
+					return { ...state, favorites };
+				}),
 		}),
 		{
 			name: 'shop-storage',
