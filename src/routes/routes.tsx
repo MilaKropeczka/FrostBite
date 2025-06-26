@@ -12,8 +12,6 @@ export const routes: RouteObject[] = [
 				element: <MainLayout />,
 				children: [
 					{ path: '/', element: <ProductSection /> },
-					{ path: '/categories', element: <div>filtred</div> },
-					{ path: '/search', element: <div>filtredSearch</div> },
 					{ path: '/favorites', element: <Favorites /> },
 					{ path: '/cart', element: <Cart /> },
 					{ path: '/product/:productId', element: <ProductView /> },

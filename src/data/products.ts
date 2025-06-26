@@ -6,6 +6,9 @@ import organicFruitImage5 from '@/assets/5.jpg';
 import organicFruitImage6 from '@/assets/6.jpg';
 import organicFruitImage7 from '@/assets/7.jpg';
 import organicFruitImage8 from '@/assets/8.jpg';
+import organicFruitImage9 from '@/assets/9.jpg';
+import organicFruitImage10 from '@/assets/10.jpg';
+import organicFruitImage11 from '@/assets/11.jpg';
 import { Category } from '@/features/products';
 
 export const products = [
@@ -71,6 +74,30 @@ export const products = [
 		category: Category.Desserts,
 		image: organicFruitImage8,
 		price: 2.89,
+		stars: 5,
+	},
+	{
+		id: 9,
+		name: 'Waffles',
+		category: Category.Desserts,
+		image: organicFruitImage9,
+		price: 2.0,
+		stars: 5,
+	},
+	{
+		id: 10,
+		name: 'Coffee',
+		category: Category.Drinks,
+		image: organicFruitImage10,
+		price: 3.3,
+		stars: 5,
+	},
+	{
+		id: 11,
+		name: 'Orange drink',
+		category: Category.Drinks,
+		image: organicFruitImage11,
+		price: 3.0,
 		stars: 5,
 	},
 ];
