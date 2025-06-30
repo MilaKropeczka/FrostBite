@@ -53,7 +53,7 @@ export function ProductCard({ product }: ProductCardProps) {
 					/>
 					<ProductInfo
 						name={product.name}
-						stars={4}
+						stars={product.stars}
 						price={product.price}
 					/>
 				</Link>
