@@ -25,7 +25,7 @@ export function Favorites() {
 			{favProducts.length === 0 ? (
 				<p className='text-gray-500'>Brak ulubionych produktów.</p>
 			) : (
-				<ul className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
+				<ul className='grid grid-cols-1 lg:grid-cols-2 gap-6 mb-18'>
 					{favProducts.map((product) => {
 						const isFav = favorites.includes(product.id);
 						return (
