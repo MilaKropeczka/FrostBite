@@ -54,6 +54,11 @@ Questions, feedback, or collaboration? Reach me at:
 - Email: milakropeczka@gmail.com  
 - LinkedIn: [linkedin.com/in/paulina-gruszka](https://linkedin.com/in/paulina-gruszka-414931b5)
 - GitHub: [github.com/milakropeczka](https://github.com/milakropeczka)
+
+## 📦 Installation
+    git clone https://github.com/MilaKropeczka/FrostBite.git
+    npm install
+    npm run dev
   
 ---
 
