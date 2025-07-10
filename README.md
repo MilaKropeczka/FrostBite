@@ -1,3 +1,50 @@
+# 🖼 Galeria Obrazów – Projekt React + TypeScript
+
+![Podgląd projektu](./public/1.png)
+
+## 🎯 Cel projektu
+
+This is a simple front-end online store built to showcase key front-end skills, including:
+- building dynamic interfaces with React,  
+- managing application state (Zustand, Context),  
+- working with REST APIs (via React Query),  
+- handling cart logic with localStorage persistence,  
+- filtering products and implementing a responsive layout. 
+
+## ⚙️ Technologies
+
+- **React**
+- **TypeScript**
+- **Vite**
+- **Zustand** – global cart state management  
+- **React Query** – API data fetching and caching  
+- **Context API** – used for product filtering  
+- **ESLint + Prettier** – code formatting and quality  
+- **HTML, CSS, Tailwind** – custom styles  
+- **localStorage** – persistent cart between sessions 
+
+## ✨ Features
+
+- 🧾 Add/remove products from the cart  
+- 💾 Cart saved to localStorage  
+- 📦 Product list fetched from a REST API  
+- 🔍 Filter products by category  
+- 👁️ View product details on a separate page  
+- 🔎 Search products by name  
+- 📱 Fully responsive design  
+- ✅ Clean, modular code with ESLint + Prettier  
+
+## 📂 Struktura kodu
+
+- Components split into logical modules (`Cart`, `ProductList`, `Search`, `ProductDetails`)
+- State management split into global (`Zustand`, `Context`) and local (`useState`)
+- Typed hooks and components with TypeScript
+- Clean class organization and styling with plain CSS
+
+---
+
+## 🛠 Advanced setup 
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
