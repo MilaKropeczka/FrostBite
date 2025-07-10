@@ -43,6 +43,14 @@ This is a simple front-end online store built to showcase key front-end skills, 
 - Typed hooks and components with TypeScript
 - Clean class organization and styling with plain CSS
 
+## 📬 Get in touch!
+
+Questions, feedback, or collaboration? Reach me at:
+
+- Email: milakropeczka@gmail.com  
+- LinkedIn: [linkedin.com/in/paulina-gruszka](https://linkedin.com/in/paulina-gruszka-414931b5)
+- GitHub: [github.com/milakropeczka](https://github.com/milakropeczka)
+  
 ---
 
 ## 🛠 Advanced setup 
