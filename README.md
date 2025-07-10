@@ -1,8 +1,10 @@
-# 🖼 Galeria Obrazów – Projekt React + TypeScript
+# 🖼 Image Gallery – React + TypeScript Project
 
-![Podgląd projektu](./public/1.png)
+![Project Preview 1](./public/2.png)
+![Project Preview 2](./public/1.png)
+![Project Preview 3](./public/3.png)
 
-## 🎯 Cel projektu
+## 🎯 Project Goal
 
 This is a simple front-end online store built to showcase key front-end skills, including:
 - building dynamic interfaces with React,  
@@ -34,7 +36,7 @@ This is a simple front-end online store built to showcase key front-end skills, 
 - 📱 Fully responsive design  
 - ✅ Clean, modular code with ESLint + Prettier  
 
-## 📂 Struktura kodu
+## 📂 Code Structure
 
 - Components split into logical modules (`Cart`, `ProductList`, `Search`, `ProductDetails`)
 - State management split into global (`Zustand`, `Context`) and local (`useState`)
