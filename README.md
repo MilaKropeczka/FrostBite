@@ -1,3 +1,8 @@
+# 🚀 Live Demo
+
+Check out the live version of this project here:  
+[LIVE FrostBite](https://milakropeczka.github.io/FrostBite/)
+
 # 🖼 Image Gallery – React + TypeScript Project
 
 ![Project Preview 1](./public/2.png)
