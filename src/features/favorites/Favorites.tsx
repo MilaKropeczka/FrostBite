@@ -55,8 +55,9 @@ export function Favorites() {
 								</button>
 								<div className='flex-1 w-56 md:w-auto'>
 									<ProductInfo
+										id={product.id}
 										name={product.name}
-										stars={4}
+										stars={product.stars}
 										price={product.price}
 									/>
 									<div className='flex justify-center mt-4'>
