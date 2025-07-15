@@ -1,3 +1,69 @@
+# 🚀 Live Demo
+
+Check out the live version of this project here:  [LIVE FrostBite](https://milakropeczka.github.io/FrostBite/)
+
+# 🖼 Image Gallery – React + TypeScript Project
+
+![Project Preview 1](./public/2.png)
+![Project Preview 2](./public/1.png)
+![Project Preview 3](./public/3.png)
+
+## 🎯 Project Goal
+
+This is a simple front-end online store built to showcase key front-end skills, including:
+- building dynamic interfaces with React,  
+- managing application state (Zustand, Context),  
+- working with REST APIs (via React Query),  
+- handling cart logic with localStorage persistence,  
+- filtering products and implementing a responsive layout. 
+
+## ⚙️ Technologies
+
+- **React**
+- **TypeScript**
+- **Vite**
+- **Zustand** – global cart state management  
+- **React Query** – API data fetching and caching  
+- **Context API** – used for product filtering  
+- **ESLint + Prettier** – code formatting and quality  
+- **HTML, CSS, Tailwind** – custom styles  
+- **localStorage** – persistent cart between sessions 
+
+## ✨ Features
+
+- 🧾 Add/remove products from the cart  
+- 💾 Cart saved to localStorage  
+- 📦 Product list fetched from a REST API  
+- 🔍 Filter products by category  
+- 👁️ View product details on a separate page  
+- 🔎 Search products by name  
+- 📱 Fully responsive design  
+- ✅ Clean, modular code with ESLint + Prettier  
+
+## 📂 Code Structure
+
+- Components split into logical modules (`Cart`, `ProductList`, `Search`, `ProductDetails`)
+- State management split into global (`Zustand`, `Context`) and local (`useState`)
+- Typed hooks and components with TypeScript
+- Clean class organization and styling with plain CSS
+
+## 📬 Get in touch!
+
+Questions, feedback, or collaboration? Reach me at:
+
+- Email: milakropeczka@gmail.com  
+- LinkedIn: [linkedin.com/in/paulina-gruszka](https://linkedin.com/in/paulina-gruszka-414931b5)
+- GitHub: [github.com/milakropeczka](https://github.com/milakropeczka)
+
+## 📦 Installation
+    git clone https://github.com/MilaKropeczka/FrostBite.git
+    npm install
+    npm run dev
+  
+---
+
+## 🛠 Advanced setup 
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
