@@ -14,11 +14,13 @@ export function ProductInfo({
 }) {
 	return (
 		<div className='text-center py-3'>
-			<Link to={`/product/${id}`}>
-				<p className='text-pink-700 font-semibold text-lg cursor-pointer'>
+			<p>
+				<Link
+					to={`/product/${id}`}
+					className='text-pink-700 font-semibold text-lg'>
 					{name}
-				</p>
-			</Link>
+				</Link>
+			</p>
 			<StarRating rating={stars} />
 			<span className='text-gray-700 text-lg font-bold mt-1 block'>
 				${price.toFixed(2)}

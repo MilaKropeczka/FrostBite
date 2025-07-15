@@ -88,11 +88,11 @@ export function CartDrawer() {
 									/>
 								</Link>
 								<div className='flex flex-col flex-1'>
-									<Link to={`/product/${product.id}`}>
-										<span className='font-medium text-pink-800'>
+									<span className='font-medium text-pink-800'>
+										<Link to={`/product/${product.id}`}>
 											{product.name}
-										</span>
-									</Link>
+										</Link>
+									</span>
 									<div className='flex items-center gap-2 mt-2'>
 										<button
 											onClick={() =>

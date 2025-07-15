@@ -4,7 +4,6 @@ import {
 	ProductImage,
 	ProductInfo,
 } from '@/features/products';
-import { Link } from 'react-router-dom';
 import { BsBookmark } from 'react-icons/bs';
 import { BsFillBookmarkCheckFill } from 'react-icons/bs';
 import { useAddToCart } from '@/hooks/useAddToCart';
@@ -29,10 +28,7 @@ export function ProductCard({ product }: ProductCardProps) {
 			exit={{ opacity: 0, y: -50 }}
 			transition={{ duration: 0.4 }}>
 			<div className='bg-white rounded-2xl shadow-xl w-full flex flex-col items-center transition-transform duration-300 transform hover:-translate-y-1 justify-end mb-3 relative'>
-				<Link
-					key={product.id}
-					to={`/product/${product.id}`}
-					className='w-full'>
+				<div key={product.id} className='w-full'>
 					<button
 						className='cursor-pointer absolute top-2 right-2 p-2 rounded-full bg-white/95 hover:bg-pink-100 transition-colors duration-300 z-10'
 						onClick={handleToggleFav}>
@@ -52,11 +48,12 @@ export function ProductCard({ product }: ProductCardProps) {
 						image={product.image}
 					/>
 					<ProductInfo
+						id={product.id}
 						name={product.name}
 						stars={product.stars}
 						price={product.price}
 					/>
-				</Link>
+				</div>
 
 				<Button
 					className='w-full'
