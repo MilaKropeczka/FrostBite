@@ -1,7 +1,7 @@
 import { IoMdSearch } from 'react-icons/io';
 import { useProductFilter } from '@/contexts/ProductFilterContext';
 
-export const SearchInput = ({ placeholder = 'Search foodstuffs' }) => {
+export const SearchInput = ({ placeholder = 'Search products' }) => {
 	const { searchTerm, setSearchTerm } = useProductFilter();
 
 	return (
