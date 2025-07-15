@@ -72,8 +72,7 @@ export function CartDrawer() {
 				) : (
 					<>
 						{cart.map((product) => (
-							<Link
-								to={`/product/${product.id}`}
+							<div
 								key={product.id}
 								className={`flex items-center gap-4 px-2 py-1 rounded-2xl bg-white/80 shadow-xl hover:-translate-y-1 duration-300 transition cursor-pointer ${
 									highlightedId === product.id
@@ -81,15 +80,19 @@ export function CartDrawer() {
 										: 'border-2 border-white/80'
 								}
 	`}>
-								<img
-									src={product.image}
-									alt={product.name}
-									className='w-16 h-16 object-cover rounded-xl'
-								/>
+								<Link to={`/product/${product.id}`}>
+									<img
+										src={product.image}
+										alt={product.name}
+										className='w-16 h-16 object-cover rounded-xl'
+									/>
+								</Link>
 								<div className='flex flex-col flex-1'>
-									<span className='font-medium text-pink-800'>
-										{product.name}
-									</span>
+									<Link to={`/product/${product.id}`}>
+										<span className='font-medium text-pink-800'>
+											{product.name}
+										</span>
+									</Link>
 									<div className='flex items-center gap-2 mt-2'>
 										<button
 											onClick={() =>
@@ -125,7 +128,7 @@ export function CartDrawer() {
 										className='hover:text-pink-700 transition duration-300 hover:scale-105'
 									/>
 								</button>
-							</Link>
+							</div>
 						))}
 					</>
 				)}
