@@ -1,6 +1,6 @@
 import { Product } from '@/features/products';
 import { createContext, useContext, useMemo, useState, ReactNode } from 'react';
-import { products } from '@/data/products';
+import { useShoprQuery } from '@/api/useShopQuery';
 
 type ProductFilterContextType = {
 	selectedCategory: string | null;
@@ -15,13 +15,14 @@ const ProductFilterContext = createContext<
 >(undefined);
 
 export function ProductFilterProvider({ children }: { children: ReactNode }) {
+	const { data: products = [] } = useShoprQuery();
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(
 		null
 	);
 	const [searchTerm, setSearchTerm] = useState<string>('');
 
 	const filteredProducts = useMemo(() => {
-		return products.filter((product) => {
+		return products.filter((product: Product) => {
 			const matchesCategory = selectedCategory
 				? product.category === selectedCategory
 				: true;
@@ -30,7 +31,7 @@ export function ProductFilterProvider({ children }: { children: ReactNode }) {
 				: true;
 			return matchesCategory && matchesSearch;
 		});
-	}, [selectedCategory, searchTerm]);
+	}, [selectedCategory, searchTerm, products]);
 
 	return (
 		<ProductFilterContext.Provider

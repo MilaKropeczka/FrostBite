@@ -1,14 +1,16 @@
 import { Button } from '@/components/UI';
 import { BackButton } from '@/components/UI';
 import { useParams } from 'react-router-dom';
-import { products } from '@/data/products';
 import { useAddToCart } from '@/hooks/useAddToCart';
 import { motion } from 'framer-motion';
+import { useProductFilter } from '@/contexts/ProductFilterContext';
+import { Product } from '../ProductCard';
 
 export function ProductView() {
 	const { productId } = useParams<{ productId: string }>();
+	const { filteredProducts: products } = useProductFilter();
 	const id = Number(productId);
-	const product = products.find((p) => p.id === id);
+	const product = products.find((p: Product) => p.id === id);
 	const handleAddCart = useAddToCart();
 
 	if (!product) {

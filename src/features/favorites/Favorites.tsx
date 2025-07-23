@@ -1,17 +1,19 @@
-import { ProductImage, ProductInfo } from '@/features/products';
+import { Product, ProductImage, ProductInfo } from '@/features/products';
 import { Button } from '@/components/UI';
-import { products } from '@/data';
 import { BsFillBookmarkCheckFill, BsBookmark } from 'react-icons/bs';
 import { useAddToCart } from '@/hooks/useAddToCart';
 import { useShopSlice } from '@/store/useShopSlice';
 import { motion } from 'framer-motion';
+import { useProductFilter } from '@/contexts/ProductFilterContext';
 
 export function Favorites() {
 	const handleAddCart = useAddToCart();
-
+	const { filteredProducts: products } = useProductFilter();
 	const favorites = useShopSlice((s) => s.favorites);
 	const toggleFavorite = useShopSlice((s) => s.toggleFavorite);
-	const favProducts = products.filter((p) => favorites.includes(p.id));
+	const favProducts = products.filter((p: Product) =>
+		favorites.includes(p.id)
+	);
 
 	return (
 		<motion.div
@@ -26,7 +28,7 @@ export function Favorites() {
 				<p className='text-gray-500'>Brak ulubionych produktów.</p>
 			) : (
 				<ul className='grid grid-cols-1 lg:grid-cols-2 gap-6 mb-18'>
-					{favProducts.map((product) => {
+					{favProducts.map((product: Product) => {
 						const isFav = favorites.includes(product.id);
 						return (
 							<li
