@@ -23,7 +23,8 @@ This is a simple front-end online store built to showcase key front-end skills, 
 - **TypeScript**
 - **Vite**
 - **Zustand** – global cart state management  
-- **React Query** – API data fetching and caching  
+- **React Query** – API data fetching and caching
+- **Mock Service Worker (MSW)** – API mocking during development and testing
 - **Context API** – used for product filtering  
 - **ESLint + Prettier** – code formatting and quality  
 - **HTML, CSS, Tailwind** – custom styles  
