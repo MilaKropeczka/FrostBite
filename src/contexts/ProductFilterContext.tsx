@@ -1,6 +1,6 @@
 import { Product } from '@/features/products';
 import { createContext, useContext, useMemo, useState, ReactNode } from 'react';
-import { useShoprQuery } from '@/api/useShopQuery';
+import { useShoprQuery } from '@/services/api/useShopQuery';
 
 type ProductFilterContextType = {
 	selectedCategory: string | null;
