@@ -1,13 +1,20 @@
 import { create } from 'zustand';
 
+type DrawerType = 'cart' | 'profile' | null;
+
 type CartDrawerState = {
-	isDrawerOpen: boolean;
-	toggleDrawer: () => void;
+	activeDrawer: DrawerType;
+	toggleDrawer: (drawer: DrawerType) => void;
 	openCart: () => void;
 };
 
 export const useCartDrawerStore = create<CartDrawerState>((set) => ({
-	isDrawerOpen: false,
-	toggleDrawer: () => set((state) => ({ isDrawerOpen: !state.isDrawerOpen })),
-	openCart: () => set({ isDrawerOpen: true }),
+	activeDrawer: null,
+	toggleDrawer: (activeDrawer) => {
+		set((state) => ({
+			activeDrawer:
+				activeDrawer === state.activeDrawer ? null : activeDrawer,
+		}));
+	},
+	openCart: () => set({ activeDrawer: null }),
 }));

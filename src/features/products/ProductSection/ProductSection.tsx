@@ -6,8 +6,6 @@ import { ProductError } from '../ProductCard/ProductError';
 
 const skeletonCount = 4;
 
-
-
 export function ProductSection() {
 	const { selectedCategory, filteredProducts, isLoading, isError } = useProductFilter();
 

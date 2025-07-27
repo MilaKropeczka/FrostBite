@@ -6,7 +6,7 @@ import { Product } from '../products';
 import { useCartDrawerStore } from '@/store/useCartDrawerStore';
 
 export function CartDrawer() {
-	const { toggleDrawer, isDrawerOpen } = useCartDrawerStore();
+	const { toggleDrawer, activeDrawer } = useCartDrawerStore();
 
 	const {
 		cart,
@@ -52,15 +52,15 @@ export function CartDrawer() {
 
 	return (
 		<div
-			className={`fixed top-0 right-0 h-full w-full md:w-100 bg-gray-100/70 backdrop-blur-lg shadow-xl px-4 py-2 flex flex-col z-50 rounded-l-2xl transition-transform duration-300 ease-in-out ${
-				isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
+			className={`fixed top-0 right-0 size-full md:w-100 bg-gray-100/70 backdrop-blur-lg shadow-xl px-4 py-2 flex flex-col z-50 rounded-l-2xl transition-transform duration-300 ease-in-out ${
+				activeDrawer === 'cart' ? 'translate-x-0' : 'translate-x-full'
 			}`}>
 			<div className='flex items-center justify-between mb-6'>
 				<h2 className='text-2xl font-semibold text-pink-800'>
 					Your Cart
 				</h2>
 				<button
-					onClick={toggleDrawer}
+					onClick={()=>toggleDrawer('cart')}
 					className='cursor-pointer transition-transform duration-300 hover:-translate-y-1'>
 					<X className='w-6 h-6 text-pink-900 hover:text-pink-700' />
 				</button>

@@ -106,10 +106,10 @@ const getProductsHandler = http.get(`/FrostBite/shop/getItems`, async () => {
 	];
 
 	await new Promise((resolve) => {
-		setTimeout(resolve, 100);
+		setTimeout(resolve, 200);
 	});
 
-	const shouldFail = Math.random() < 0.8;
+	const shouldFail = Math.random() < 0.2;
 
 	if (shouldFail) {
 		return HttpResponse.error();

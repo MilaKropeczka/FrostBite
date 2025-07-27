@@ -4,6 +4,7 @@ import { Outlet } from 'react-router';
 import { CartDrawer } from '@/features/cart';
 import { ProductFilterProvider } from '@/contexts/ProductFilterContext';
 import Footer from '@/components/Footer/Footer';
+import { ProfileDrawer } from '@/features/profile/ProfileDrawer';
 
 export function MainLayout() {
 	return (
@@ -14,6 +15,7 @@ export function MainLayout() {
 				<Outlet />
 			</ProductFilterProvider>
 			<CartDrawer />
+			<ProfileDrawer />
 			<Footer />
 		</div>
 	);
