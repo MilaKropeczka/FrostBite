@@ -52,7 +52,7 @@ This is a simple front-end online store built to showcase key front-end skills, 
 - Add settings options to the search functionality  
 - Enable adding product reviews
 
-  ## 📂 Code Structure
+## 📂 Code Structure
 
 - Components split into logical modules (`Cart`, `ProductList`, `Search`, `ProductDetails`)
 - State management split into global (`Zustand`, `Context`) and local (`useState`)
