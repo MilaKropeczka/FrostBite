@@ -8,6 +8,8 @@ type ProductFilterContextType = {
 	searchTerm: string;
 	setSearchTerm: (term: string) => void;
 	filteredProducts: Product[];
+	isLoading: boolean;
+	isError: boolean;
 };
 
 const ProductFilterContext = createContext<
@@ -15,7 +17,7 @@ const ProductFilterContext = createContext<
 >(undefined);
 
 export function ProductFilterProvider({ children }: { children: ReactNode }) {
-	const { data: products = [] } = useShoprQuery();
+	const { data: products = [], isLoading, isError } = useShoprQuery();
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(
 		null
 	);
@@ -41,6 +43,8 @@ export function ProductFilterProvider({ children }: { children: ReactNode }) {
 				searchTerm,
 				setSearchTerm,
 				filteredProducts,
+				isLoading,
+				isError,
 			}}>
 			{children}
 		</ProductFilterContext.Provider>
