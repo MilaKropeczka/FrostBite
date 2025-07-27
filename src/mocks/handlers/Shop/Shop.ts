@@ -106,8 +106,14 @@ const getProductsHandler = http.get(`/FrostBite/shop/getItems`, async () => {
 	];
 
 	await new Promise((resolve) => {
-		setTimeout(resolve, 1000);
+		setTimeout(resolve, 100);
 	});
+
+	const shouldFail = Math.random() < 0.8;
+
+	if (shouldFail) {
+		return HttpResponse.error();
+	}
 
 	return HttpResponse.json(products, { status: 200 });
 });
