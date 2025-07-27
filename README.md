@@ -50,6 +50,15 @@ This is a simple front-end online store built to showcase key front-end skills, 
 - Typed hooks and components with TypeScript
 - Clean class organization and styling with plain CSS
 
+## 🚧 Work in progress
+- ProfileDrawer (UI only, functionality coming soon)
+
+## 🛠️ Planned:
+- Add backend integration
+- Implement user registration  
+- Add settings options to the search functionality  
+- Enable adding product reviews
+
 ## 📬 Get in touch!
 
 Questions, feedback, or collaboration? Reach me at:
