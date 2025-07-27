@@ -6,7 +6,7 @@ export function Header() {
 	return (
 		<>
 			<BackgroundGradient />
-			<header className='relative mt-16 md:mt-10 z-10 w-full max-w-xl drop-shadow-xl flex justify-center text-center items-center'>
+			<header className='relative mt-16 md:mt-10 z-10 w-full max-w-xl drop-shadow-xl flex justify-center items-center text-center'>
 				<Link to='/'>
 					<StyledTitle
 						mainText='Explore Our'

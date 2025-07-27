@@ -12,13 +12,18 @@ const renderIcon = (
 	Icon: React.ElementType,
 	to: string,
 	isButton: boolean,
-	toggleDrawer: () => void
+	toggleDrawer: () => void,
+	keyId: number
 ) => {
 	const content = <IconButton Icon={Icon} />;
 	return isButton ? (
-		<button onClick={toggleDrawer}>{content}</button>
+		<button key={keyId} onClick={toggleDrawer}>
+			{content}
+		</button>
 	) : (
-		<Link to={to}>{content}</Link>
+		<Link to={to} key={keyId}>
+			{content}
+		</Link>
 	);
 };
 
@@ -27,8 +32,8 @@ export const SearchBar = () => {
 	return (
 		<>
 			<div className='absolute top-4 right-4 z-50 flex space-x-3 md:hidden'>
-				{icons.map(({ Icon, to, isButton }) =>
-					renderIcon(Icon, to, isButton, toggleDrawer)
+				{icons.map(({ id, Icon, to, isButton }) =>
+					renderIcon(Icon, to, isButton, toggleDrawer, id)
 				)}
 			</div>
 
@@ -39,8 +44,8 @@ export const SearchBar = () => {
 				</div>
 
 				<div className='hidden md:flex w-auto justify-end items-center space-x-4'>
-					{icons.map(({ Icon, to, isButton }) =>
-						renderIcon(Icon, to, isButton, toggleDrawer)
+					{icons.map(({ id, Icon, to, isButton }) =>
+						renderIcon(Icon, to, isButton, toggleDrawer, id)
 					)}
 				</div>
 			</nav>
