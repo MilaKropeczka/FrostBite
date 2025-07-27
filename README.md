@@ -39,7 +39,9 @@ This is a simple front-end online store built to showcase key front-end skills, 
 - 👁️ View product details on a separate page  
 - 🔎 Search products by name  
 - 📱 Fully responsive design  
-- ✅ Clean, modular code with ESLint + Prettier  
+- ✅ Clean, modular code with ESLint + Prettier
+- ⏳ Loading states handled with skeleton placeholders for better UX
+- ⚠️ Error states handled with user-friendly error messages
 
 ## 📂 Code Structure
 
