@@ -43,13 +43,6 @@ This is a simple front-end online store built to showcase key front-end skills, 
 - ⏳ Loading states handled with skeleton placeholders for better UX
 - ⚠️ Error states handled with user-friendly error messages
 
-## 📂 Code Structure
-
-- Components split into logical modules (`Cart`, `ProductList`, `Search`, `ProductDetails`)
-- State management split into global (`Zustand`, `Context`) and local (`useState`)
-- Typed hooks and components with TypeScript
-- Clean class organization and styling with plain CSS
-
 ## 🚧 Work in progress
 - ProfileDrawer (UI only, functionality coming soon)
 
@@ -58,6 +51,13 @@ This is a simple front-end online store built to showcase key front-end skills, 
 - Implement user registration  
 - Add settings options to the search functionality  
 - Enable adding product reviews
+
+  ## 📂 Code Structure
+
+- Components split into logical modules (`Cart`, `ProductList`, `Search`, `ProductDetails`)
+- State management split into global (`Zustand`, `Context`) and local (`useState`)
+- Typed hooks and components with TypeScript
+- Clean class organization and styling with plain CSS
 
 ## 📬 Get in touch!
 
