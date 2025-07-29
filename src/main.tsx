@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 async function enableMocksAndRenderApp() {
-	if (import.meta.env.DEV) {
+	if (import.meta.env.DEV || import.meta.env.VITE_ENABLE_MSW === 'true') {
 		const { worker } = await import('./mocks/browser.ts');
 		console.log(import.meta.env.DEV);
 		await worker.start({
