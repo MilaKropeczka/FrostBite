@@ -6,6 +6,7 @@ type CartDrawerState = {
 	activeDrawer: DrawerType;
 	toggleDrawer: (drawer: DrawerType) => void;
 	openCart: () => void;
+	closeProfile: () => void;
 };
 
 export const useCartDrawerStore = create<CartDrawerState>((set) => ({
@@ -16,5 +17,6 @@ export const useCartDrawerStore = create<CartDrawerState>((set) => ({
 				activeDrawer === state.activeDrawer ? null : activeDrawer,
 		}));
 	},
-	openCart: () => set({ activeDrawer: null }),
+	openCart: () => set({ activeDrawer: 'cart' }),
+	closeProfile: () => set({ activeDrawer: 'profile' }),
 }));
