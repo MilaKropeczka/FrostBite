@@ -3,11 +3,13 @@ import { useProductFilter } from '@/contexts/ProductFilterContext';
 import { Categories } from '../Categories';
 import { ProductSkeleton } from '../ProductCard/ProductSkeleton';
 import { ProductError } from '../ProductCard/ProductError';
+import { InfoFooter } from '@/components/InfoFooter/InfoFooter';
 
 const skeletonCount = 4;
 
 export function ProductSection() {
-	const { selectedCategory, filteredProducts, isLoading, isError } = useProductFilter();
+	const { selectedCategory, filteredProducts, isLoading, isError } =
+		useProductFilter();
 
 	return (
 		<>
@@ -26,15 +28,16 @@ export function ProductSection() {
 					{isLoading
 						? [...Array(skeletonCount)].map((_, i) => (
 								<ProductSkeleton key={i} />
-						))
+						  ))
 						: filteredProducts.map((product) => (
 								<ProductCard
 									key={product.id}
 									product={product}
 								/>
-						))}
+						  ))}
 				</div>
 			</main>
+			<InfoFooter />
 		</>
 	);
 }
