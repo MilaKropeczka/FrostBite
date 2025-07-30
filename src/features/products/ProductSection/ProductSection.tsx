@@ -5,7 +5,7 @@ import { ProductSkeleton } from '../ProductCard/ProductSkeleton';
 import { ProductError } from '../ProductCard/ProductError';
 import { InfoFooter } from '@/components/InfoFooter/InfoFooter';
 
-const skeletonCount = 4;
+const skeletonCount = 8;
 
 export function ProductSection() {
 	const { selectedCategory, filteredProducts, isLoading, isError } =
