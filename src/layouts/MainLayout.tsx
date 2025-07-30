@@ -4,7 +4,7 @@ import { Outlet } from 'react-router';
 import { CartDrawer } from '@/features/cart';
 import { ProductFilterProvider } from '@/contexts/ProductFilterContext';
 import { Footer } from '@/components/Footer/Footer';
-import { ProfileDrawer } from '@/features/profile/ProfileDrawer';
+import { ProfileDrawer } from '@/features/profile/profileDrawer/ProfileDrawer';
 
 export function MainLayout() {
 	return (

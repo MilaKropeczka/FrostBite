@@ -27,7 +27,7 @@ export function ProductCard({ product }: ProductCardProps) {
 			animate={{ opacity: 1, y: 0 }}
 			exit={{ opacity: 0, y: -50 }}
 			transition={{ duration: 0.4 }}>
-			<div className='bg-white rounded-2xl shadow-xl w-full flex flex-col items-center transition-transform duration-300 transform hover:-translate-y-1 justify-end mb-3 relative'>
+			<div className='bg-white rounded-2xl shadow-lg w-full flex flex-col items-center transition-transform duration-300 transform hover:-translate-y-1 justify-end mb-3 relative'>
 				<div key={product.id} className='w-full'>
 					<button
 						className='cursor-pointer absolute top-2 right-2 p-2 rounded-full bg-white/95 hover:bg-pink-100 transition-colors duration-300 z-10'

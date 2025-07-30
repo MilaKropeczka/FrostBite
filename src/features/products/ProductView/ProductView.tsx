@@ -23,12 +23,12 @@ export function ProductView() {
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
 			transition={{ duration: 0.8 }}>
-			<div className='flex flex-col md:flex-row items-center w-full max-w-6xl mx-auto mt-10 gap-10 bg-white shadow-2xl rounded-2xl overflow-hidden mb-18'>
+			<div className='flex flex-col md:flex-row items-center w-full max-w-6xl mx-auto mt-10 gap-10 bg-white shadow-lg rounded-2xl overflow-hidden mb-18'>
 				<div className='w-full md:w-1/2 overflow-hidden aspect-[19/20] relative'>
 					<img
 						src={product?.image}
 						alt='iceCream'
-						className='w-full h-full object-cover transition-transform duration-300 hover:scale-105'
+						className='size-full object-cover transition-transform duration-300 hover:scale-105'
 					/>
 					<BackButton to='/' />
 				</div>
@@ -59,7 +59,7 @@ export function ProductView() {
 					</p>
 
 					<Button
-						className='mt-6 w-full sm:w-1/2 px-6 py-3 text-base font-semibold shadow-xl'
+						className='mt-6 w-full sm:w-1/2 px-6 py-3 text-base font-semibold shadow-lg'
 						onClick={() => handleAddCart(product)}>
 						Purchase Now
 					</Button>

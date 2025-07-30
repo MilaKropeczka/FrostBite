@@ -52,7 +52,7 @@ export function CartDrawer() {
 
 	return (
 		<div
-			className={`fixed top-0 right-0 size-full md:w-100 bg-gray-100/70 backdrop-blur-lg shadow-xl px-4 py-2 flex flex-col z-50 rounded-l-2xl transition-transform duration-300 ease-in-out ${
+			className={`fixed top-0 right-0 size-full md:w-100 bg-gray-100/70 backdrop-blur-lg shadow-lg px-4 py-2 flex flex-col z-50 rounded-l-2xl transition-transform duration-300 ease-in-out ${
 				activeDrawer === 'cart' ? 'translate-x-0' : 'translate-x-full'
 			}`}>
 			<div className='flex items-center justify-between mb-6'>
@@ -60,7 +60,7 @@ export function CartDrawer() {
 					Your Cart
 				</h2>
 				<button
-					onClick={()=>toggleDrawer('cart')}
+					onClick={() => toggleDrawer('cart')}
 					className='cursor-pointer transition-transform duration-300 hover:-translate-y-1'>
 					<X className='w-6 h-6 text-pink-900 hover:text-pink-700' />
 				</button>
@@ -74,7 +74,7 @@ export function CartDrawer() {
 						{cart.map((product) => (
 							<div
 								key={product.id}
-								className={`flex items-center gap-4 px-2 py-1 rounded-2xl bg-white/80 shadow-xl hover:-translate-y-1 duration-300 transition cursor-pointer ${
+								className={`flex items-center gap-4 px-2 py-1 rounded-2xl bg-white/80 shadow-lg hover:-translate-y-1 duration-300 transition cursor-pointer ${
 									highlightedId === product.id
 										? 'border-2 border-pink-800/80'
 										: 'border-2 border-white/80'

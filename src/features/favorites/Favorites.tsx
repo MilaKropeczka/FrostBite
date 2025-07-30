@@ -33,7 +33,7 @@ export function Favorites() {
 						return (
 							<li
 								key={product.id}
-								className='relative bg-white rounded-2xl shadow-2xl flex items-center md:gap-4 hover:-translate-y-1 duration-300'>
+								className='relative bg-white rounded-2xl shadow-lg flex items-center md:gap-4 hover:-translate-y-1 duration-300'>
 								<ProductImage
 									id={product.id}
 									name={product.name}

@@ -132,8 +132,8 @@ export function Orders() {
 	};
 
 	return (
-		<section className='w-full max-w-xl py-12 mb-12'>
-			<h2 className='text-xl font-semibold text-center text-pink-800 mb-6 tracking-tight'>
+		<section className='w-full max-w-3xl py-16 mb-12 p-6'>
+			<h2 className='text-xl font-semibold text-pink-700 mb-4'>
 				My orders
 			</h2>
 
@@ -148,7 +148,7 @@ export function Orders() {
 						return (
 							<li
 								key={order.id}
-								className='bg-gradient-to-tr from-grey-50 to-white ring ring-pink-100 shadow-lg rounded-xl p-4'>
+								className='bg-white ring ring-gray-300 shadow-lg rounded-xl p-4'>
 								<div className='flex flex-col mb-2'>
 									<div className='w-full flex justify-between'>
 										<p className='text-pink-800 font-semibold'>
@@ -211,7 +211,7 @@ export function Orders() {
 												{order.products.map((p, i) => (
 													<li
 														key={i}
-														className='w-full flex items-center gap-4 bg-white ring ring-pink-200  bg-gradient-to-br from-grey-50 to-pink-100 duration-300 rounded-lg shadow-md pr-6'>
+														className='w-full flex items-center gap-4 bg-white ring ring-pink-200  bg-gradient-to-br from-grey-50 to-pink-100 duration-300 rounded-lg shadow-lg pr-6'>
 														{p.image && (
 															<img
 																src={p.image}

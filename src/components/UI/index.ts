@@ -1,5 +1,4 @@
 export { BackButton } from './BackButton';
-export { BackgroundGradient } from './BackgroundGradient';
 export { Button } from './Button';
 export { CategoryIcon } from './CategoryIcon';
 export { IconButton } from './IconButton';
