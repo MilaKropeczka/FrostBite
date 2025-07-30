@@ -148,7 +148,7 @@ export function Orders() {
 						return (
 							<li
 								key={order.id}
-								className='bg-white shadow-lg rounded-xl p-4'>
+								className='bg-gradient-to-tr from-grey-50 to-white ring ring-pink-100 shadow-lg rounded-xl p-4'>
 								<div className='flex flex-col mb-2'>
 									<div className='w-full flex justify-between'>
 										<p className='text-pink-800 font-semibold'>
@@ -194,7 +194,7 @@ export function Orders() {
 									)}
 								</button>
 								{isOpen && (
-									<div className='mt-4 text-sm text-gray-700 bg-pink-50 px-5 py-4 rounded-lg ring-1 ring-pink-200'>
+									<div className='mt-4 text-sm text-gray-700 rounded-xl px-4'>
 										<p>
 											<strong>Delivery address:</strong>{' '}
 											12 Kwiatowa St., 00-000 Warsaw
@@ -211,12 +211,12 @@ export function Orders() {
 												{order.products.map((p, i) => (
 													<li
 														key={i}
-														className='flex items-center gap-4 hover:bg-pink-100 duration-300 rounded-lg'>
+														className='w-full flex items-center gap-4 bg-white ring ring-pink-200  bg-gradient-to-br from-grey-50 to-pink-100 duration-300 rounded-lg shadow-md pr-6'>
 														{p.image && (
 															<img
 																src={p.image}
 																alt={p.name}
-																className='size-12 object-cover rounded-md cursor-pointer'
+																className='size-12 object-cover rounded-l-md cursor-pointer'
 															/>
 														)}
 														<div>
@@ -235,7 +235,7 @@ export function Orders() {
 												))}
 											</ul>
 										</div>
-										<p className='mt-2'>
+										<p className='mt-3'>
 											<strong>Note:</strong> Please
 											deliver after 4 PM.
 										</p>
