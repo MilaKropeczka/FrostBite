@@ -138,7 +138,7 @@ export function Orders() {
 			</h2>
 
 			{mockOrders.length === 0 ? (
-				<p className='text-pink-500 text-center'>No orders found.</p>
+				<p className='text-pink-700 text-center'>No orders found.</p>
 			) : (
 				<ul className='flex flex-col gap-5'>
 					{mockOrders.map((order) => {
@@ -148,24 +148,25 @@ export function Orders() {
 						return (
 							<li
 								key={order.id}
-								className='bg-white shadow-xl rounded-2xl px-6 py-5'>
-								<div className='flex justify-between items-center'>
-									<div>
+								className='bg-white shadow-lg rounded-xl p-4'>
+								<div className='flex flex-col mb-2'>
+									<div className='w-full flex justify-between'>
 										<p className='text-pink-800 font-semibold'>
 											Order No. {order.id}
 										</p>
-										<p className='text-sm text-gray-500'>
-											{order.date}
-										</p>
-									</div>
-
-									<div className='flex flex-col items-end gap-1 text-right'>
 										<span
 											className={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full ${color}`}>
 											{icon}
 											{label}
 										</span>
-										<span className='text-pink-800 font-bold px-2'>
+									</div>
+
+									<div className='text-right w-full flex justify-between'>
+										<p className='text-sm text-gray-500'>
+											{order.date}
+										</p>
+
+										<span className='text-pink-800 font-bold'>
 											{order.total.toFixed(2)} PLN
 										</span>
 									</div>
@@ -173,7 +174,7 @@ export function Orders() {
 
 								<button
 									onClick={() => toggleDetails(order.id)}
-									className='flex items-center text-sm text-pink-800 hover:text-pink-900 hover:underline mt-4 transition-colors duration-200 self-end cursor-pointer'>
+									className='flex items-center text-xs text-pink-800 hover:text-pink-900 hover:underline transition-colors duration-300 self-end cursor-pointer pt-2 rounded-xl'>
 									{isOpen ? (
 										<>
 											Hide details
