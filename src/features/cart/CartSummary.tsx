@@ -67,7 +67,7 @@ export function CartSummary() {
 	};
 
 	return (
-		<div className='min-w-3xl mx-auto p-6 space-y-12 mb-12'>
+		<div className='w-full lg:w-auto lg:min-w-3xl mx-auto p-6 space-y-12 mb-12'>
 			<div className='space-y-4'>
 				<h2 className='text-2xl text-center font-bold text-pink-800 mt-6'>
 					Finalizacja zamówienia

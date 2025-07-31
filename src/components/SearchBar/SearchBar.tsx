@@ -18,7 +18,9 @@ const renderIcon = (
 ) => {
 	const content = <IconButton Icon={Icon} />;
 	return isButton ? (
-		<button key={keyId} onClick={() => toggleDrawer(to as 'cart' | 'profile')}>
+		<button
+			key={keyId}
+			onClick={() => toggleDrawer(to as 'cart' | 'profile')}>
 			{content}
 		</button>
 	) : (
@@ -38,7 +40,7 @@ export const SearchBar = () => {
 				)}
 			</div>
 
-			<nav className='relative z-10 mt-8 max-w-xl w-full text-pink-700 rounded-xl flex items-center space-x-2 md:space-x-3'>
+			<nav className='relative z-10 mt-8 max-w-2xl w-full text-pink-700 rounded-xl flex items-center space-x-2 md:space-x-3'>
 				<div className='relative flex-grow'>
 					<SearchInput />
 					<SettingsButton />
