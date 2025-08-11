@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 const features = [
 	{
 		icon: <Truck size={32} />,
-		title: 'Szybka dostawa',
-		desc: 'Twoje zamówienie wysyłamy nawet tego samego dnia – szybko i bezpiecznie prosto pod Twoje drzwi.',
+		title: 'Fast Delivery',
+		desc: 'We ship your order even on the same day – fast and safely straight to your door.',
 	},
 	{
 		icon: <Undo2 size={32} />,
-		title: 'Zwroty 14 dni',
-		desc: 'Masz 14 dni na zwrot bez podawania przyczyny. Zakupy bez stresu i zbędnych formalności.',
+		title: '14-Day Returns',
+		desc: 'You have 14 days to return without giving a reason. Stress-free shopping with no hassle.',
 	},
 	{
 		icon: <CreditCard size={32} />,
-		title: 'Bezpieczne płatności',
-		desc: 'Wszystkie transakcje są szyfrowane i zabezpieczone - możesz kupować bez obaw.',
+		title: 'Secure Payments',
+		desc: 'All transactions are encrypted and secure – shop with confidence.',
 	},
 ];
 

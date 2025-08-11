@@ -2,7 +2,7 @@ import { SearchBar } from '@/components/SearchBar/SearchBar';
 import { Header } from '@/components/Header/Header';
 import { Outlet } from 'react-router';
 import { CartDrawer } from '@/features/cart';
-import { ProductFilterProvider } from '@/contexts/ProductFilterContext';
+import { ProductFilterProvider } from '@/contexts/ProductFilterProvider';
 import { Footer } from '@/components/Footer/Footer';
 import { ProfileDrawer } from '@/features/profile/profileDrawer/ProfileDrawer';
 

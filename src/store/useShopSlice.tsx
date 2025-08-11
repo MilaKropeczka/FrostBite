@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { Product } from '@/features/products';
 import { persist } from 'zustand/middleware';
 
-type CartProduct = Product & { quantity: number };
+export type CartProduct = Product & { quantity: number };
 
 type State = {
 	cart: CartProduct[];
