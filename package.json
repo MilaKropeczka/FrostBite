@@ -14,6 +14,7 @@
     "bd": "npm run build && npm run deploy"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
     "@tailwindcss/vite": "^4.0.17",
     "@tanstack/react-query": "^5.83.0",
     "axios": "^1.11.0",
@@ -21,6 +22,7 @@
     "lucide-react": "^0.503.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.62.0",
     "react-icons": "^5.5.0",
     "react-router": "^7.4.0",
     "react-router-dom": "^7.4.0",
