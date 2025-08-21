@@ -56,7 +56,7 @@ export function ProductCard({ product }: ProductCardProps) {
 				</div>
 
 				<Button
-					className='w-full'
+					className='w-full max-w-3/4 mb-2'
 					onClick={() => handleAddCart(product)}>
 					Add to cart
 				</Button>

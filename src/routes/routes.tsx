@@ -5,6 +5,7 @@ import { Favorites } from '@/features/favorites';
 import { CartSummary } from '@/features/cart';
 import { ProductView } from '@/features/products';
 import { Orders } from '@/features/profile/orders/Orders';
+import { Address } from '@/features/profile/address/Address';
 
 export const routes: RouteObject[] = [
 	{
@@ -19,7 +20,7 @@ export const routes: RouteObject[] = [
 					{ path: '/orders', element: <Orders /> },
 					{ path: '/returns', element: <>In progress</> },
 					{ path: '/account', element: <>In progress</> },
-					{ path: '/address', element: <>In progress</> },
+					{ path: '/address', element: <Address /> },
 				],
 			},
 		],

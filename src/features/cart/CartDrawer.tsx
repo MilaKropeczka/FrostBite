@@ -142,12 +142,11 @@ export function CartDrawer() {
 				<Link
 					to={cart.length === 0 ? '#' : '/cart'}
 					onClick={(e) => {
-						if (cart.length === 0) {
-							e.preventDefault();
-						}
+						if (!cart.length) e.preventDefault();
+						toggleDrawer(null);
 					}}
 					className={`mt-4 text-white py-3 w-3/4 rounded-xl hover:brightness-110 font-semibold transition-all duration-300 active:scale-95 flex items-center justify-center mx-auto ${
-						cart.length === 0
+						!cart.length
 							? 'bg-pink-700/50 cursor-not-allowed'
 							: 'bg-gradient-to-l cursor-pointer from-pink-700 to-pink-800'
 					}`}>

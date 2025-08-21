@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/UI';
 import { CartProduct, useShopSlice } from '@/store/useShopSlice';
+import { FirstTitle } from '@/components/UI/FirstTitle';
+import { SecondTitle } from '@/components/UI/SecondTitle';
 
 const OrderSummary = ({ products }: { products: CartProduct[] }) => {
 	const totalPrice = useMemo(
@@ -18,10 +20,8 @@ const OrderSummary = ({ products }: { products: CartProduct[] }) => {
 
 	return (
 		<section className='space-y-4'>
-			<h2 className='text-2xl text-center font-bold text-pink-800 mt-6'>
-				Order Summary
-			</h2>
-			<h3 className='text-xl font-semibold text-pink-700'>Products</h3>
+			<FirstTitle title='Order Summary' className='text-center' />
+			<SecondTitle title='Products' />
 			{products.map((product) => (
 				<div
 					key={product.id}

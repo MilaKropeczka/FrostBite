@@ -59,7 +59,7 @@ export function ProductView() {
 					</p>
 
 					<Button
-						className='mt-6 w-full sm:w-1/2 px-6 py-3 text-base font-semibold shadow-lg'
+						className='mt-6 w-full sm:w-1/2 py-3 text-base font-semibold shadow-lg'
 						onClick={() => handleAddCart(product)}>
 						Purchase Now
 					</Button>
