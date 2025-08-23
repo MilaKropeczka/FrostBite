@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react';
+import { useFormContext } from 'react-hook-form';
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
 
 interface InputProps {
@@ -22,61 +23,63 @@ export function Input({
 	required = false,
 	error,
 	touched,
-	className,
+	className = '',
 	...props
 }: InputProps) {
-	const isValid = !error && touched;
+	const { watch } = useFormContext();
+	const currentValue = watch(name);
+	const val = value ?? currentValue ?? '';
 	const isError = !!error && touched;
-	const errorId = `${name}-error`;
+	const isValid = !error && (touched || val);
+
+	const inputClass = [
+		'flex-1 p-2 border rounded focus:outline-none focus:ring-2 bg-gray-50 placeholder-pink-900/30',
+		isError &&
+			'border-red-800 border-2 bg-red-50 focus:ring-red-500/60 text-red-900',
+		isValid &&
+			!isError &&
+			'border-pink-700/30 bg-pink-50/80 focus:ring-pink-500/60 text-pink-900',
+		!isError &&
+			!isValid &&
+			'border-pink-900/30 focus:ring-pink-700/50 focus:bg-pink-100',
+		className,
+	]
+		.filter(Boolean)
+		.join(' ');
+
+	const Icon = isError
+		? AiOutlineCloseCircle
+		: isValid
+		? AiOutlineCheckCircle
+		: null;
+
+	const iconClass = isError ? 'text-red-600' : 'text-green-600';
 
 	return (
 		<div className='flex flex-col flex-1 relative'>
-			<input
-				type={type}
-				name={name}
-				value={value}
-				onChange={onChange}
-				placeholder={placeholder}
-				required={required}
-				aria-invalid={isError}
-				aria-describedby={error ? errorId : undefined}
-				{...props}
-				className={`flex-1 p-2 border rounded focus:outline-none focus:ring-2 bg-gray-50 placeholder-pink-900/30 text-pink-900 
-          ${
-				isError
-					? 'border-red-800 border-2 bg-red-50 focus:ring-red-500/60'
-					: ''
-			} 
-          ${
-				isValid
-					? 'border-green-600 bg-green-50 focus:ring-green-500/60'
-					: ''
-			} 
-          ${
-				!isError && !isValid
-					? 'border-pink-900/30 focus:ring-pink-700/50 focus:bg-pink-100'
-					: ''
-			} 
-          ${className}`}
-			/>
-
-			{isValid && (
-				<AiOutlineCheckCircle
-					size={20}
-					className='absolute right-2 top-5 -translate-y-1/2 text-green-600'
-					aria-hidden='true'
+			<div className='relative flex flex-1'>
+				<input
+					type={type}
+					name={name}
+					value={val}
+					onChange={onChange}
+					placeholder={placeholder}
+					required={required}
+					aria-invalid={isError}
+					className={inputClass}
+					{...props}
 				/>
-			)}
 
-			{isError && (
-				<AiOutlineCloseCircle
-					size={20}
-					className='absolute right-2 top-5 -translate-y-1/2 text-red-600'
-					aria-hidden='true'
-				/>
-			)}
+				{Icon && (
+					<Icon
+						size={20}
+						className={`absolute right-2 top-1/2 -translate-y-1/2 ${iconClass}`}
+						aria-hidden='true'
+					/>
+				)}
+			</div>
 
-			<span id={errorId} className='text-red-800 text-sm min-h-[1.25rem]'>
+			<span className='text-red-800 text-sm min-h-[1.25rem]'>
 				{error || '\u00A0'}
 			</span>
 		</div>

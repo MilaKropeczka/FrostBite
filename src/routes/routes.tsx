@@ -6,6 +6,7 @@ import { CartSummary } from '@/features/cart';
 import { ProductView } from '@/features/products';
 import { Orders } from '@/features/profile/orders/Orders';
 import { Address } from '@/features/profile/address/Address';
+import { DetailsAccount } from '@/features/profile/detailsAccount/DetailsAccount';
 
 export const routes: RouteObject[] = [
 	{
@@ -19,7 +20,7 @@ export const routes: RouteObject[] = [
 					{ path: '/product/:productId', element: <ProductView /> },
 					{ path: '/orders', element: <Orders /> },
 					{ path: '/returns', element: <>In progress</> },
-					{ path: '/account', element: <>In progress</> },
+					{ path: '/account', element: <DetailsAccount /> },
 					{ path: '/address', element: <Address /> },
 				],
 			},
