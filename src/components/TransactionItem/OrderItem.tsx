@@ -1,13 +1,23 @@
-import { Order } from '../types';
-import { useState } from 'react';
+import { Order } from './types/index';
+import { useState, ReactNode } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { OrderImages } from './OrderImages';
-import { statusMap } from '../ordersData';
 import { OrderProductItem } from './OrderProductItem';
 
-export function OrderItem({ order }: { order: Order }) {
+type OrderItemProps = {
+	order: Order;
+	statusLabel: string;
+	statusIcon: ReactNode;
+	statusColor: string;
+};
+
+export function OrderItem({
+	order,
+	statusLabel,
+	statusIcon,
+	statusColor,
+}: OrderItemProps) {
 	const [isOpen, setIsOpen] = useState(false);
-	const { label, icon, color } = statusMap[order.status];
 
 	return (
 		<li className='bg-white shadow-lg rounded-xl p-4 flex flex-col'>
@@ -19,9 +29,9 @@ export function OrderItem({ order }: { order: Order }) {
 							Order No. {order.id}
 						</p>
 						<span
-							className={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full ${color}`}>
-							{icon}
-							{label}
+							className={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full ${statusColor}`}>
+							{statusIcon}
+							{statusLabel}
 						</span>
 					</div>
 

@@ -1,6 +1,13 @@
 import { ReactNode } from 'react';
 
-export type OrderStatus = 'pending' | 'shipped' | 'delivered' | 'cancelled';
+export type OrderStatus =
+	| 'pending'
+	| 'shipped'
+	| 'delivered'
+	| 'cancelled'
+	| 'requested'
+	| 'approved'
+	| 'rejected';
 
 export type OrderProduct = {
 	name: string;
