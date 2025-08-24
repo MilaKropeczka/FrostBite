@@ -43,6 +43,7 @@ export function ProfileDrawer() {
 					<Link
 						key={to}
 						to={to}
+						onClick={() => toggleDrawer(null)}
 						className='flex items-center gap-3 text-pink-900 font-medium bg-white/80 shadow-lg py-3 px-4 rounded-2xl hover:translate-x-1 transition duration-300'>
 						{icon}
 						<span>{label}</span>
