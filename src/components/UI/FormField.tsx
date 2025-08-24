@@ -4,9 +4,13 @@ import { Input } from './Input';
 export function FormField<TFieldValues extends FieldValues = FieldValues>({
 	name,
 	placeholder,
+	disabled,
+	type = 'text',
 }: {
 	name: Path<TFieldValues>;
 	placeholder: string;
+	disabled?: boolean;
+	type?: 'text' | 'email' | 'password' | 'number';
 }) {
 	const { register, formState } = useFormContext<TFieldValues>();
 	const error = formState.errors[name]?.message;
@@ -23,6 +27,8 @@ export function FormField<TFieldValues extends FieldValues = FieldValues>({
 			placeholder={placeholder}
 			error={errorMessage}
 			touched={touched}
+			disabled={disabled}
+			type={type}
 		/>
 	);
 }
