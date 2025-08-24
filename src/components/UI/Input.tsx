@@ -12,6 +12,7 @@ interface InputProps {
 	touched?: boolean;
 	error?: string;
 	className?: string;
+	disabled?: boolean;
 }
 
 export function Input({
@@ -24,6 +25,7 @@ export function Input({
 	error,
 	touched,
 	className = '',
+	disabled = false,
 	...props
 }: InputProps) {
 	const { watch } = useFormContext();
@@ -56,8 +58,8 @@ export function Input({
 	const iconClass = isError ? 'text-red-600' : 'text-green-600';
 
 	return (
-		<div className='flex flex-col flex-1 relative'>
-			<div className='relative flex flex-1'>
+		<div className='flex flex-col w-full'>
+			<div className='relative flex'>
 				<input
 					type={type}
 					name={name}
@@ -67,6 +69,7 @@ export function Input({
 					required={required}
 					aria-invalid={isError}
 					className={inputClass}
+					disabled={disabled}
 					{...props}
 				/>
 
