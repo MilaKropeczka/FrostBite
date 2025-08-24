@@ -50,6 +50,30 @@ export const mockOrders: Order[] = [
 				quantity: 2,
 				image: Image1,
 			},
+			{
+				name: 'Printed T-shirt',
+				price: 39.0,
+				quantity: 2,
+				image: Image1,
+			},
+			{
+				name: 'Printed T-shirt',
+				price: 39.0,
+				quantity: 2,
+				image: Image1,
+			},
+			{
+				name: 'Printed T-shirt',
+				price: 39.0,
+				quantity: 2,
+				image: Image1,
+			},
+			{
+				name: 'Printed T-shirt',
+				price: 39.0,
+				quantity: 2,
+				image: Image1,
+			},
 		],
 	},
 ];
