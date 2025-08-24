@@ -6,12 +6,14 @@ import { FormSection } from '@/components/UI/FormSection';
 import { Stack } from '@/components/UI/Stack';
 
 const addressSchema = z.object({
-	firstName: z.string().min(2),
-	lastName: z.string().min(2),
-	street: z.string().min(2),
-	city: z.string().min(2),
-	postalCode: z.string().regex(/^\d{2}-\d{3}$/),
-	country: z.string().min(2),
+	firstName: z.string().min(2, 'First name must be at least 2 characters'),
+	lastName: z.string().min(2, 'Last name must be at least 2 characters'),
+	street: z.string().min(2, 'Street must be at least 2 characters'),
+	city: z.string().min(2, 'City must be at least 2 characters'),
+	postalCode: z
+		.string()
+		.regex(/^\d{2}-\d{3}$/, 'Invalid postal code format (00-000)'),
+	country: z.string().min(2, 'Country must be at least 2 characters'),
 });
 
 export type AddressFormValues = z.infer<typeof addressSchema>;
@@ -38,15 +40,16 @@ export function Address() {
 		<FormProvider {...form}>
 			<FormSection
 				title='Shipping Address'
+				className='py-16 mb-12 p-6'
 				onSubmit={onSubmit}
 				isSubmitting={form.formState.isSubmitting}
 				isValid={form.formState.isValid}>
-				<Stack direction='row' spacing={4}>
+				<Stack direction={{ base: 'col', md: 'row' }} spacing={4}>
 					<FormField name='firstName' placeholder='First Name' />
 					<FormField name='lastName' placeholder='Last Name' />
 				</Stack>
 				<FormField name='street' placeholder='Street and Number' />
-				<Stack direction='row' spacing={4}>
+				<Stack direction={{ base: 'col', md: 'row' }} spacing={4}>
 					<FormField name='city' placeholder='City' />
 					<FormField name='postalCode' placeholder='Postal Code' />
 				</Stack>
