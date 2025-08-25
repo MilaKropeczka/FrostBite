@@ -1,7 +1,8 @@
 import { SecondTitle } from '@/components/UI/SecondTitle';
 import { OrderItem } from '@/components/TransactionItem/OrderItem';
-import { mockOrders } from './ordersData';
 import { Clock, Truck, PackageCheck, XOctagon } from 'lucide-react';
+import { useOrdersQuery } from '@/services/api/useOrdersQuery';
+import { Order } from '@/components/TransactionItem/types';
 
 const getStatusInfo = (status: string) => {
 	switch (status) {
@@ -39,8 +40,30 @@ const getStatusInfo = (status: string) => {
 };
 
 export function Orders() {
-	const filteredOrders = mockOrders.filter(
-		(order) => getStatusInfo(order.status).label !== 'Unknown'
+	const { data, isLoading, isError, isPending } = useOrdersQuery();
+
+	if (isLoading || isPending) {
+		return (
+			<section className='w-full max-w-3xl py-16 mb-12 p-6'>
+				<SecondTitle title='My orders' />
+				<p className='text-center'>Loading orders...</p>
+			</section>
+		);
+	}
+
+	if (isError) {
+		return (
+			<section className='w-full max-w-3xl py-16 mb-12 p-6'>
+				<SecondTitle title='My orders' />
+				<p className='text-red-700 text-center'>
+					Error loading orders.
+				</p>
+			</section>
+		);
+	}
+
+	const filteredOrders = data.filter(
+		(order: Order) => getStatusInfo(order.status).label !== 'Unknown'
 	);
 
 	return (
