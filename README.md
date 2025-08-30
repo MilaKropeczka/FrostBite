@@ -28,7 +28,9 @@ This is a simple front-end online store built to showcase key front-end skills, 
 - **Context API** – used for product filtering  
 - **ESLint + Prettier** – code formatting and quality  
 - **HTML, CSS, Tailwind** – custom styles  
-- **localStorage** – persistent cart between sessions 
+- **localStorage** – persistent cart between sessions
+- **Zod** – schema validation and type-safe form handling
+- **React Hook Form** – performant form state management with Zod integration  
 
 ## ✨ Features
 
