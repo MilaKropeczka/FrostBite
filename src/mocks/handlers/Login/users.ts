@@ -1,6 +1,13 @@
 import { http, HttpResponse } from 'msw';
-import Image1 from '@/assets/11.jpg';
 import { Order } from '@/components/TransactionItem/types';
+import organicFruitImage1 from '@/assets/1.jpg';
+import organicFruitImage2 from '@/assets/2.jpg';
+import organicFruitImage3 from '@/assets/3.jpg';
+import organicFruitImage4 from '@/assets/4.jpg';
+import organicFruitImage5 from '@/assets/5.jpg';
+import organicFruitImage8 from '@/assets/8.jpg';
+import organicFruitImage10 from '@/assets/10.jpg';
+import organicFruitImage11 from '@/assets/11.jpg';
 
 const users = [{ id: '1', email: 'test@test.pl', password: '123456' }];
 
@@ -10,29 +17,39 @@ const orders: Record<string, Order[]> = {
 			id: '65789',
 			date: '2025-07-25',
 			status: 'delivered',
-			total: 179.99,
+			total: 16.49,
 			products: [
 				{
-					name: 'Summer Dress',
-					price: 89.99,
+					name: 'Coffee',
+					price: 4.3,
 					quantity: 1,
-					image: Image1,
+					image: organicFruitImage10,
 				},
-				{ name: 'Sunglasses', price: 29.0, quantity: 1, image: Image1 },
-				{ name: 'Sandals', price: 61.0, quantity: 1, image: Image1 },
+				{
+					name: 'Strawberry',
+					price: 4.1,
+					quantity: 2,
+					image: organicFruitImage2,
+				},
+				{
+					name: 'Mint',
+					price: 3.99,
+					quantity: 1,
+					image: organicFruitImage3,
+				},
 			],
 		},
 		{
 			id: '23444',
 			date: '2025-07-27',
 			status: 'shipped',
-			total: 89.49,
+			total: 3.99,
 			products: [
 				{
-					name: 'Denim Jacket',
-					price: 89.49,
-					quantity: 1,
-					image: Image1,
+					name: 'Mint',
+					price: 3.99,
+					quantity: 3,
+					image: organicFruitImage3,
 				},
 			],
 		},
@@ -40,13 +57,13 @@ const orders: Record<string, Order[]> = {
 			id: '23344',
 			date: '2025-07-27',
 			status: 'requested',
-			total: 89.49,
+			total: 3.99,
 			products: [
 				{
-					name: 'Denim Jacket',
-					price: 89.49,
+					name: 'Mint',
+					price: 3.99,
 					quantity: 1,
-					image: Image1,
+					image: organicFruitImage3,
 				},
 			],
 		},
@@ -54,13 +71,13 @@ const orders: Record<string, Order[]> = {
 			id: '23412',
 			date: '2025-07-27',
 			status: 'approved',
-			total: 89.49,
+			total: 4.3,
 			products: [
 				{
-					name: 'Denim Jacket',
-					price: 89.49,
+					name: 'Coffee',
+					price: 4.3,
 					quantity: 1,
-					image: Image1,
+					image: organicFruitImage10,
 				},
 			],
 		},
@@ -68,13 +85,13 @@ const orders: Record<string, Order[]> = {
 			id: '23402',
 			date: '2025-07-27',
 			status: 'rejected',
-			total: 89.49,
+			total: 4.3,
 			products: [
 				{
-					name: 'Denim Jacket',
-					price: 89.49,
+					name: 'Coffee',
+					price: 4.3,
 					quantity: 1,
-					image: Image1,
+					image: organicFruitImage10,
 				},
 			],
 		},
@@ -82,19 +99,19 @@ const orders: Record<string, Order[]> = {
 			id: '44556',
 			date: '2025-07-29',
 			status: 'pending',
-			total: 249.0,
+			total: 8.6,
 			products: [
 				{
-					name: 'Sports Shoes',
-					price: 125.0,
+					name: 'Mint',
+					price: 3.99,
 					quantity: 1,
-					image: Image1,
+					image: organicFruitImage3,
 				},
 				{
-					name: 'Oversized Hoodie',
-					price: 124.0,
+					name: 'Coffee',
+					price: 4.3,
 					quantity: 1,
-					image: Image1,
+					image: organicFruitImage10,
 				},
 			],
 		},
@@ -102,37 +119,37 @@ const orders: Record<string, Order[]> = {
 			id: '23081',
 			date: '2025-07-20',
 			status: 'cancelled',
-			total: 79.0,
+			total: 38.92,
 			products: [
 				{
-					name: 'Printed T-shirt',
-					price: 39.0,
+					name: 'Waffles',
+					price: 2.89,
 					quantity: 2,
-					image: Image1,
+					image: organicFruitImage8,
 				},
 				{
-					name: 'Printed T-shirt',
-					price: 39.0,
+					name: 'Blueberry',
+					price: 3.59,
 					quantity: 2,
-					image: Image1,
+					image: organicFruitImage5,
 				},
 				{
-					name: 'Printed T-shirt',
-					price: 39.0,
+					name: 'Banana',
+					price: 3.99,
 					quantity: 2,
-					image: Image1,
+					image: organicFruitImage4,
 				},
 				{
-					name: 'Printed T-shirt',
-					price: 39.0,
+					name: 'Orange drink',
+					price: 3.0,
 					quantity: 2,
-					image: Image1,
+					image: organicFruitImage11,
 				},
 				{
-					name: 'Printed T-shirt',
-					price: 39.0,
+					name: 'Chocolate',
+					price: 5.9,
 					quantity: 2,
-					image: Image1,
+					image: organicFruitImage1,
 				},
 			],
 		},
