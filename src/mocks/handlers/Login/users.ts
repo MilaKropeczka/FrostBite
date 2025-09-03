@@ -9,7 +9,7 @@ import organicFruitImage8 from '@/assets/8.jpg';
 import organicFruitImage10 from '@/assets/10.jpg';
 import organicFruitImage11 from '@/assets/11.jpg';
 
-const users = [{ id: '1', email: 'test@test.pl', password: '123456' }];
+const users = [{ id: '1', email: 'test@test.pl', password: 'testpassword123' }];
 
 const orders: Record<string, Order[]> = {
 	'1': [
@@ -167,11 +167,11 @@ const loginHandler = http.post('/api/login', async ({ request }) => {
 
 	await new Promise((resolve) => setTimeout(resolve, 200));
 
-	const shouldFail = Math.random() < 0.1;
+	// const shouldFail = Math.random() < 0.1;
 
-	if (shouldFail) {
-		return HttpResponse.error();
-	}
+	// if (shouldFail) {
+	// 	return HttpResponse.error();
+	// }
 
 	const user = users.find(
 		(u) => u.email === email && u.password === password
@@ -189,10 +189,10 @@ const loginHandler = http.post('/api/login', async ({ request }) => {
 const ordersHandler = http.get('/api/orders', async ({ request }) => {
 	await new Promise((resolve) => setTimeout(resolve, 200));
 
-	const shouldFail = Math.random() < 0.1;
-	if (shouldFail) {
-		return HttpResponse.error();
-	}
+	// const shouldFail = Math.random() < 0.1;
+	// if (shouldFail) {
+	// 	return HttpResponse.error();
+	// }
 
 	const auth = request.headers.get('Authorization');
 	if (!auth) {
