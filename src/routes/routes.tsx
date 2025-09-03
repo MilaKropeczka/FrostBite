@@ -9,6 +9,7 @@ import { Address } from '@/features/profile/address/Address';
 import { DetailsAccount } from '@/features/profile/detailsAccount/DetailsAccount';
 import { Returns } from '@/features/profile/returns/Returns';
 import { ProtectedLayout } from '@/components/ProtectedLayout.tsx/ProtectedLayout';
+import { LoginView } from '@/components/LoginView/LoginView';
 
 export const routes: RouteObject[] = [
 	{
@@ -20,6 +21,7 @@ export const routes: RouteObject[] = [
 					{ path: '/favorites', element: <Favorites /> },
 					{ path: '/cart', element: <CartSummary /> },
 					{ path: '/product/:productId', element: <ProductView /> },
+					{ path: '/login', element: <LoginView /> },
 					{
 						element: <ProtectedLayout />,
 						children: [
