@@ -109,11 +109,11 @@ const getProductsHandler = http.get(`/FrostBite/shop/getItems`, async () => {
 		setTimeout(resolve, 200);
 	});
 
-	const shouldFail = Math.random() < 0.2;
+	// const shouldFail = Math.random() < 0.2;
 
-	if (shouldFail) {
-		return HttpResponse.error();
-	}
+	// if (shouldFail) {
+	// 	return HttpResponse.error();
+	// }
 
 	return HttpResponse.json(products, { status: 200 });
 });
