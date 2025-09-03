@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { Product } from '@/features/products';
 import { persist } from 'zustand/middleware';
+import { toast } from '@/hooks/useToaster';
 
 export type CartProduct = Product & { quantity: number };
 
@@ -85,6 +86,7 @@ export const useShopSlice = create<State & Actions>()(
 					...state,
 					cart: state.cart.filter((item) => item.id !== id),
 				}));
+				toast.warning('Item removed from cart');
 			},
 			setHighlightedId: (id) => set({ highlightedId: id }),
 			toggleFavorite: (id) =>
@@ -93,6 +95,11 @@ export const useShopSlice = create<State & Actions>()(
 					const favorites = isFav
 						? state.favorites.filter((favId) => favId !== id)
 						: [...state.favorites, id];
+					if (isFav) {
+						toast.warning('Removed from favorites');
+					} else {
+						toast.success('Added to favorites');
+					}
 
 					return { ...state, favorites };
 				}),

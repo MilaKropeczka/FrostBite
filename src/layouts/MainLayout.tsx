@@ -5,6 +5,7 @@ import { CartDrawer } from '@/features/cart';
 import { ProductFilterProvider } from '@/contexts/ProductFilterProvider';
 import { Footer } from '@/components/Footer/Footer';
 import { ProfileDrawer } from '@/features/profile/profileDrawer/ProfileDrawer';
+import { Toaster } from '@/components/UI/Toaster';
 
 export function MainLayout() {
 	return (
@@ -17,6 +18,7 @@ export function MainLayout() {
 			<CartDrawer />
 			<ProfileDrawer />
 			<Footer />
+			<Toaster />
 		</div>
 	);
 }

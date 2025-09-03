@@ -16,10 +16,10 @@ interface ToastProps {
 }
 
 const toastStyles: Record<ToastType, string> = {
-	success: 'bg-green-800/75 border-green-900',
-	error: 'bg-red-800/75 border-red-900',
-	warning: 'bg-yellow-800/75 border-yellow-900',
-	info: 'bg-blue-800/75 border-blue-900',
+	success: 'bg-green-800/90 border-green-900',
+	error: 'bg-red-800/90 border-red-900',
+	warning: 'bg-yellow-800/90 border-yellow-900',
+	info: 'bg-blue-800/90 border-blue-900',
 };
 
 const icons: Record<ToastType, React.ReactNode> = {
@@ -49,8 +49,8 @@ export function Toast({ message, type, onClose, duration = 4000 }: ToastProps) {
         transform transition-all duration-300 ease-in-out
         ${
 			isVisible
-				? 'translate-x-0 opacity-100'
-				: 'translate-x-full opacity-0'
+				? 'translate-y-0 opacity-100'
+				: 'translate-y-full opacity-0'
 		}
         flex items-center gap-3 py-3 px-6 rounded-lg border-2 text-white font-medium
         shadow-lg ${toastStyles[type]}
