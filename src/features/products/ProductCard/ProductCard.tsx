@@ -27,33 +27,31 @@ export function ProductCard({ product }: ProductCardProps) {
 			animate={{ opacity: 1, y: 0 }}
 			exit={{ opacity: 0, y: -50 }}
 			transition={{ duration: 0.4 }}>
-			<div className='bg-white rounded-2xl shadow-lg w-full flex flex-col items-center transition-transform duration-300 transform hover:-translate-y-1 justify-end mb-3 relative'>
-				<div key={product.id} className='w-full'>
-					<button
-						className='cursor-pointer absolute top-2 right-2 p-2 rounded-full bg-white/95 hover:bg-pink-100 transition-colors duration-300 z-10 shadow-md'
-						onClick={handleToggleFav}>
-						{isFavorite ? (
-							<BsFillBookmarkCheckFill
-								size={24}
-								className='text-pink-800'
-							/>
-						) : (
-							<BsBookmark size={24} className='text-black/70' />
-						)}
-					</button>
+			<div className='bg-white rounded-2xl shadow-lg flex flex-col items-center transition-transform duration-300 transform hover:-translate-y-1 justify-end mb-3 relative w-62 md:w-full m-auto'>
+				<button
+					className='cursor-pointer absolute top-2 right-2 p-2 rounded-full bg-white/95 hover:bg-pink-100 transition-colors duration-300 z-10 shadow-md'
+					onClick={handleToggleFav}>
+					{isFavorite ? (
+						<BsFillBookmarkCheckFill
+							size={24}
+							className='text-pink-800'
+						/>
+					) : (
+						<BsBookmark size={24} className='text-black/70' />
+					)}
+				</button>
 
-					<ProductImage
-						id={product.id}
-						name={product.name}
-						image={product.image}
-					/>
-					<ProductInfo
-						id={product.id}
-						name={product.name}
-						stars={product.stars}
-						price={product.price}
-					/>
-				</div>
+				<ProductImage
+					id={product.id}
+					name={product.name}
+					image={product.image}
+				/>
+				<ProductInfo
+					id={product.id}
+					name={product.name}
+					stars={product.stars}
+					price={product.price}
+				/>
 
 				<Button
 					className='w-full max-w-3/4 mb-2'
