@@ -8,7 +8,7 @@ import { Address } from '@/features/profile/address/Address';
 import { DetailsAccount } from '@/features/profile/detailsAccount/DetailsAccount';
 import { ProtectedLayout } from '@/components/ProtectedLayout.tsx/ProtectedLayout';
 import { LoginView } from '@/components/LoginView/LoginView';
-import { TransactionList } from '@/components/TransactionItem/TransactionList';
+import { TransactionList } from '@/features/profile/transactionItems/TransactionList';
 
 export const routes: RouteObject[] = [
 	{
