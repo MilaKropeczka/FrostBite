@@ -4,12 +4,11 @@ import { ProductSection } from '@/features/products';
 import { Favorites } from '@/features/favorites';
 import { CartSummary } from '@/features/cart';
 import { ProductView } from '@/features/products';
-import { Orders } from '@/features/profile/orders/Orders';
 import { Address } from '@/features/profile/address/Address';
 import { DetailsAccount } from '@/features/profile/detailsAccount/DetailsAccount';
-import { Returns } from '@/features/profile/returns/Returns';
 import { ProtectedLayout } from '@/components/ProtectedLayout.tsx/ProtectedLayout';
 import { LoginView } from '@/components/LoginView/LoginView';
+import { TransactionList } from '@/components/TransactionItem/TransactionList';
 
 export const routes: RouteObject[] = [
 	{
@@ -25,8 +24,14 @@ export const routes: RouteObject[] = [
 					{
 						element: <ProtectedLayout />,
 						children: [
-							{ path: '/orders', element: <Orders /> },
-							{ path: '/returns', element: <Returns /> },
+							{
+								path: '/orders',
+								element: <TransactionList type='orders' />,
+							},
+							{
+								path: '/returns',
+								element: <TransactionList type='returns' />,
+							},
 							{ path: '/account', element: <DetailsAccount /> },
 							{ path: '/address', element: <Address /> },
 						],
