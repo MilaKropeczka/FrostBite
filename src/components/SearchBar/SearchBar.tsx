@@ -40,7 +40,7 @@ export const SearchBar = () => {
 				)}
 			</div>
 
-			<nav className='relative z-10 mt-8 max-w-2xl w-full text-pink-700 rounded-xl flex items-center space-x-2 md:space-x-3'>
+			<nav className='relative z-10 mt-8 max-w-2xl w-full text-pink-700 rounded-xl flex items-center px-3'>
 				<div className='relative flex-grow'>
 					<SearchInput />
 					<SettingsButton />
