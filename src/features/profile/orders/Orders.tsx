@@ -3,6 +3,7 @@ import { OrderItem } from '@/components/TransactionItem/OrderItem';
 import { Clock, Truck, PackageCheck, XOctagon } from 'lucide-react';
 import { useOrdersQuery } from '@/services/api/useOrdersQuery';
 import { Order } from '@/components/TransactionItem/types';
+import { OrderSkeleton } from '@/components/TransactionItem/OrderSkeleton';
 
 const getStatusInfo = (status: string) => {
 	switch (status) {
@@ -42,15 +43,6 @@ const getStatusInfo = (status: string) => {
 export function Orders() {
 	const { data, isLoading, isError, isPending } = useOrdersQuery();
 
-	if (isLoading || isPending) {
-		return (
-			<section className='w-full max-w-3xl py-16 mb-12 p-6'>
-				<SecondTitle title='My orders' />
-				<p className='text-center'>Loading orders...</p>
-			</section>
-		);
-	}
-
 	if (isError) {
 		return (
 			<section className='w-full max-w-3xl py-16 mb-12 p-6'>
@@ -62,32 +54,44 @@ export function Orders() {
 		);
 	}
 
-	const filteredOrders = data.filter(
+	const filteredOrders = data?.filter(
 		(order: Order) => getStatusInfo(order.status).label !== 'Unknown'
 	);
 
 	return (
 		<section className='w-full max-w-3xl py-16 mb-12 p-6'>
 			<SecondTitle title='My orders' />
-			{filteredOrders.length === 0 ? (
-				<p className='text-pink-700 text-center'>No orders found.</p>
+			{isLoading || isPending ? (
+				<>
+					<OrderSkeleton />
+					<OrderSkeleton />
+					<OrderSkeleton />
+				</>
 			) : (
-				<ul className='flex flex-col gap-5'>
-					{filteredOrders.map((order) => {
-						const { label, icon, color } = getStatusInfo(
-							order.status
-						);
-						return (
-							<OrderItem
-								key={order.id}
-								order={order}
-								statusLabel={label}
-								statusIcon={icon}
-								statusColor={color}
-							/>
-						);
-					})}
-				</ul>
+				<>
+					{filteredOrders?.length === 0 ? (
+						<p className='text-pink-700 text-center'>
+							No orders found.
+						</p>
+					) : (
+						<ul className='flex flex-col gap-5'>
+							{filteredOrders?.map((order) => {
+								const { label, icon, color } = getStatusInfo(
+									order.status
+								);
+								return (
+									<OrderItem
+										key={order.id}
+										order={order}
+										statusLabel={label}
+										statusIcon={icon}
+										statusColor={color}
+									/>
+								);
+							})}
+						</ul>
+					)}
+				</>
 			)}
 		</section>
 	);
