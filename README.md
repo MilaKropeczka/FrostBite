@@ -4,9 +4,9 @@ Check out the live version of this project here:  [LIVE FrostBite](https://milak
 
 # 🖼 Image Gallery – React + TypeScript Project
 
-![Project Preview 1](./public/1.png)
-![Project Preview 2](./public/2.png)
-![Project Preview 3](./public/3.png)
+![Project Preview 1](./public/12.png)
+![Project Preview 2](./public/22.png)
+![Project Preview 3](./public/32.png)
 ![Project Preview 4](./public/4.png)
 
 ## 🎯 Project Goal
