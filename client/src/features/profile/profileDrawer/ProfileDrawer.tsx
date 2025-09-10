@@ -90,11 +90,11 @@ export function ProfileDrawer() {
 							onClick={() => toggleDrawer(null)}>
 							<span className='w-full text-center'>Login</span>
 						</DrawerLink>
-						{/* <DrawerLink
+						<DrawerLink
 							to='/register'
 							onClick={() => toggleDrawer(null)}>
 							<span className='w-full text-center'>Register</span>
-						</DrawerLink> */}
+						</DrawerLink>
 					</>
 				)}
 			</div>

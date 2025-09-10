@@ -4,10 +4,10 @@ Check out the live version of this project here:  [LIVE FrostBite](https://milak
 
 # 🖼 Image Gallery – React + TypeScript Project
 
-![Project Preview 1](./public/5.png)
-![Project Preview 2](./public/6.png)
-![Project Preview 3](./public/7.png)
-![Project Preview 4](./public/4.png)
+![Project Preview 1](./client/public/5.png)
+![Project Preview 2](./client/public/6.png)
+![Project Preview 3](./client/public/7.png)
+![Project Preview 4](./client/public/4.png)
 
 ## 🎯 Project Goal
 
@@ -105,7 +105,7 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ['./client/tsconfig.node.json', './client/tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
     },
   },

@@ -41,7 +41,7 @@ export const SearchBar = () => {
 			</div>
 
 			<nav className='relative z-10 mt-8 max-w-2xl w-full text-pink-700 rounded-xl flex items-center px-3'>
-				<div className='relative flex-grow'>
+				<div className='relative flex-grow md:mr-3'>
 					<SearchInput />
 					<SettingsButton />
 				</div>
