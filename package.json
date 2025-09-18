@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/mongoose": "^11.0.3",
+    "@nestjs/swagger": "^11.2.0",
+    "bcrypt": "^6.0.0",
+    "mongoose": "^8.18.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0"
+  }
+}
