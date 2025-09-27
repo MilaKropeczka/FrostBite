@@ -1,0 +1,74 @@
+'use client';
+
+import { Button, BackButton } from '@/components/UI';
+import { useAddToCart } from '@/hooks/useAddToCart';
+import { motion } from 'framer-motion';
+import { useProductFilter } from '@/contexts/ProductFilterContext';
+import { Product } from '../ProductCard';
+import Image from 'next/image';
+import { useParams } from 'next/navigation';
+
+export function ProductView() {
+	const { id: idParams } = useParams<{ id: string }>();
+	const { filteredProducts: products } = useProductFilter();
+	const id = Number(idParams);
+	const product = products.find((p: Product) => p.id === id);
+	const handleAddCart = useAddToCart();
+
+	if (!product) {
+		return <div>Produkt nie znaleziony</div>;
+	}
+
+	return (
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 0.8 }}
+			className='px-3'>
+			<div className='flex flex-col md:flex-row items-center w-full max-w-6xl mx-auto mt-10 gap-10 bg-white shadow-lg rounded-2xl overflow-hidden mb-18'>
+				<div className='w-full md:w-1/2 overflow-hidden aspect-[19/20] relative'>
+					<Image
+						src={product.image}
+						alt={product.name}
+						fill
+						className='object-cover transition-transform duration-300 hover:scale-105'
+					/>
+					<BackButton />
+				</div>
+
+				<div className='w-full md:flex-1 flex flex-col justify-center gap-y-4 px-8 py-6'>
+					<h2 className='text-2xl font-semibold text-neutral-900'>
+						{product.name}
+					</h2>
+
+					<p className='text-3xl font-bold text-pink-700'>
+						${product.price.toFixed(2)}
+					</p>
+
+					<h3 className='text-neutral-600 font-medium'>
+						Indulge in creamy perfection
+					</h3>
+
+					<p className='text-sm text-neutral-700 leading-relaxed'>
+						Our chocolate ice cream is a true delight for the
+						senses. Made with rich Belgian chocolate, it offers an
+						intense flavor that melts effortlessly on your tongue.
+						Each scoop blends deep cocoa notes with a velvety
+						texture, delivering a moment of pure pleasure. No
+						artificial additives – just real chocolate, fresh milk,
+						and a touch of magic. Perfect for lifting your mood,
+						finishing a great meal, or simply... because you deserve
+						it.
+					</p>
+
+					<Button
+						className='mt-6 w-full sm:w-1/2 py-3 text-base font-semibold shadow-lg'
+						onClick={() => handleAddCart(product)}>
+						Purchase Now
+					</Button>
+				</div>
+			</div>
+		</motion.div>
+	);
+}
