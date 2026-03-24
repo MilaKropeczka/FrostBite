@@ -10,15 +10,16 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@tailwindcss/vite": "^4.2.2",
     "@tanstack/react-query": "^5.90.2",
     "axios": "^1.12.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.21",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.544.0",
-    "next": "15.5.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "next": "^16.2.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-hook-form": "^7.63.0",
     "react-icons": "^5.5.0",
     "tailwind-merge": "^3.3.1",
@@ -27,17 +28,32 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+<<<<<<< HEAD
+    "@tailwindcss/postcss": "^4.2.2",
+=======
     "@tailwindcss/postcss": "^4",
+>>>>>>> e9c82db0130a06c3c162d799a4c00027cfb3af08
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4",
+    "eslint-config-next": "^16.2.1",
+    "jsdom": "^29.0.1",
+<<<<<<< HEAD
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+=======
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.13",
-    "typescript": "^5"
+>>>>>>> e9c82db0130a06c3c162d799a4c00027cfb3af08
+    "typescript": "^5",
+    "vitest": "^4.1.1"
   },
   "msw": {
     "workerDirectory": [

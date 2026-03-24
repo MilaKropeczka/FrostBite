@@ -1,14 +1,14 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	const token = request.cookies.get('token')?.value;
 	const { pathname } = request.nextUrl;
 
 	const protectedRoutes = ['/profile'];
 
 	const isProtectedRoute = protectedRoutes.some((route) =>
-		pathname.startsWith(route)
+		pathname.startsWith(route),
 	);
 
 	if (isProtectedRoute && !token) {
