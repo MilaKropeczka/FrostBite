@@ -6,8 +6,8 @@ import { FormField } from '@/components/UI/FormField';
 import { FormSection } from '@/components/UI/FormSection';
 import { useLoginMutation } from '@/hooks/useLoginMutation';
 import { toast } from '@/hooks/useToaster';
-import { useRouter } from 'next/navigation';
 import { DemoAccess } from './DemoAccess';
+
 
 const loginSchema = z.object({
 	email: z.string().min(3, 'Login must be at least 3 characters'),
@@ -17,12 +17,9 @@ const loginSchema = z.object({
 export type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginView() {
-	const router = useRouter();
-
 	const loginMutation = useLoginMutation({
 		onSuccess: () => {
 			toast.success('Login successful!');
-			router.push('/');
 		},
 		onError: () => {
 			toast.error('Invalid email or password');
@@ -33,15 +30,10 @@ export function LoginView() {
 		resolver: zodResolver(loginSchema),
 		mode: 'all',
 		defaultValues: {
-			email: '',
-			password: '',
+			email: 'test@test.pl',
+			password: 'testpassword123',
 		},
 	});
-
-	if (form.getValues().email === '') {
-		form.setValue('email', 'test@test.pl');
-		form.setValue('password', 'testpassword123');
-	}
 
 	const onSubmit = form.handleSubmit((values) => {
 		loginMutation.mutate(values);

@@ -2,42 +2,24 @@
 
 import { ReactNode, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { getToken } from '@/hooks/useLoginMutation';
+import { useAuth } from '@/providers/AuthProvider';
 
 export default function ProtectedLayout({ children }: { children: ReactNode }) {
 	const router = useRouter();
-	const [isAuth, setIsAuth] = useState<boolean | null>(null);
-
+	const { isLoggedIn, isLoading } = useAuth();
 	useEffect(() => {
-		const token = getToken();
-
-		if (token) {
-			setIsAuth(true);
-		} else {
-			router.replace('/');
+		if (!isLoading && !isLoggedIn) {
+			router.replace('/login');
 		}
-	}, [router]);
+	}, [isLoggedIn, isLoading, router]);
 
-	if (isAuth === null) return null;
+	if (isLoading) {
+		return null;
+	}
+
+	if (!isLoggedIn) {
+		return null;
+	}
 
 	return <>{children}</>;
 }
-
-// import { cookies } from 'next/headers';
-// import { redirect } from 'next/navigation';
-// import { ReactNode } from 'react';
-
-// export default async function ProtectedLayout({
-// 	children,
-// }: {
-// 	children: ReactNode;
-// }) {
-// 	const cookieStore = await cookies();
-// 	const token = cookieStore.get('token')?.value;
-
-// 	if (!token) {
-// 		redirect('/');
-// 	}
-
-// 	return <>{children}</>;
-// }

@@ -2,9 +2,10 @@
 import { X, User, Package, Undo2, MapPin, LogOut } from 'lucide-react';
 import Link from 'next/link';
 import { useCartDrawerStore } from '@/store/useCartDrawerStore';
-import { useAuth } from '@/hooks/useAuth';
+import { useAuth } from '@/providers/AuthProvider';
 import { toast } from '@/hooks/useToaster';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 function DrawerLink({
 	to,
@@ -27,7 +28,7 @@ function DrawerLink({
 
 export function ProfileDrawer() {
 	const { activeDrawer, toggleDrawer } = useCartDrawerStore();
-	const { isLoggedIn, logout } = useAuth();
+	const { isLoggedIn, logout, user } = useAuth();
 	const router = useRouter();
 
 	const profileLinks = [
@@ -53,11 +54,15 @@ export function ProfileDrawer() {
 		},
 	];
 
-	const handleLogout = () => {
-		logout();
-		toggleDrawer(null);
-		toast.warning('Successfully logged out');
-		router.push('/');
+	const handleLogout = async () => {
+		try {
+			await axios.post('/api/logout');
+			logout();
+			toggleDrawer(null);
+			toast.warning('Successfully logged out');
+		} catch (error) {
+			toast.error('Logout failed');
+		}
 	};
 
 	return (
@@ -71,6 +76,7 @@ export function ProfileDrawer() {
 				<h2 className='text-2xl font-semibold text-pink-800'>
 					{isLoggedIn ? 'My profile' : 'Welcome'}
 				</h2>
+
 				<button
 					onClick={() => toggleDrawer('profile')}
 					className='cursor-pointer transition-transform duration-300 hover:-translate-y-1'>
@@ -78,7 +84,7 @@ export function ProfileDrawer() {
 				</button>
 			</div>
 
-			<div className='flex flex-col gap-4 flex-grow'>
+			<div className='flex flex-col gap-4 grow'>
 				{isLoggedIn ? (
 					<>
 						{profileLinks.map(({ to, label, icon }) => (
@@ -110,6 +116,9 @@ export function ProfileDrawer() {
 			{isLoggedIn && (
 				<>
 					<hr className='text-pink-800/40 mb-2' />
+					{isLoggedIn && (
+						<p className='mb-2 text-center'>{user?.email}</p>
+					)}
 					<button
 						onClick={handleLogout}
 						className='flex items-center justify-center gap-3 w-full text-pink-900 font-medium bg-white shadow-lg py-3 px-4 rounded-2xl hover:translate-x-1 transition duration-300 cursor-pointer'>

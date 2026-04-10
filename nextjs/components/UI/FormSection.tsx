@@ -1,3 +1,4 @@
+// 'use client';
 import { SecondTitle } from '@/components/UI/SecondTitle';
 import { Button } from '@/components/UI/Button';
 import { toast } from '@/hooks/useToaster';
@@ -13,6 +14,24 @@ type FormSectionProps = {
 	submittingLabel?: string;
 };
 
+// import Cookies from 'js-cookie';
+// import { useEffect } from 'react';
+
+// export function useTestCookies() {
+// 	useEffect(() => {
+// 		const existingToken = Cookies.get('auth-token');
+// 		if (!existingToken) {
+// 			const fakeToken = 'token123';
+// 			Cookies.set('auth-token', fakeToken, {
+// 				expires: 7,
+// 				path: '/',
+// 				sameSite: 'strict',
+// 				secure: true,
+// 			});
+// 		}
+// 	}, []);
+// }
+
 export function FormSection({
 	title,
 	onSubmit,
@@ -23,6 +42,7 @@ export function FormSection({
 	submitLabel = 'Save',
 	submittingLabel = 'Saving...',
 }: FormSectionProps) {
+	// useTestCookies();
 	return (
 		<section className={`w-full max-w-2xl ${className}`}>
 			{title && <SecondTitle title={title} />}

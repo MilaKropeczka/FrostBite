@@ -1,52 +1,44 @@
 import axios from 'axios';
-import { useMutation, UseMutationOptions } from '@tanstack/react-query';
+import {
+	useMutation,
+	UseMutationOptions,
+	useQueryClient,
+} from '@tanstack/react-query';
+import { useAuth } from '../providers/AuthProvider';
+import { useRouter } from 'next/navigation';
+import { QueryClient } from '@tanstack/react-query';
 
 type LoginParams = { email: string; password: string };
-type LoginResponse = { token: string };
 
-const login = async ({
+type LoginResponse = {
+	message: string;
+	user: {
+		id: string;
+		email: string;
+		role: string;
+	};
+};
+
+const loginMutation = async ({
 	email,
 	password,
 }: LoginParams): Promise<LoginResponse> => {
 	const response = await axios.post('/api/login', { email, password });
-	localStorage.setItem('token', response.data.token);
 	return response.data;
 };
 
 export const useLoginMutation = (
-	options?: UseMutationOptions<LoginResponse, Error, LoginParams>
+	options?: UseMutationOptions<LoginResponse, Error, LoginParams, unknown>,
 ) => {
-	return useMutation<LoginResponse, Error, LoginParams>({
-		mutationFn: login,
-		...options,
+	const { login } = useAuth();
+	const router = useRouter();
+
+	return useMutation<LoginResponse, Error, LoginParams, unknown>({
+		mutationFn: loginMutation,
+		onSuccess: (data, variables, onMutateResult, context) => {
+			login(data.user);
+			router.push('/');
+			options?.onSuccess?.(data, variables, onMutateResult, context);
+		},
 	});
 };
-
-export const getToken = () => localStorage.getItem('token');
-
-// import axios from 'axios';
-// import { useMutation, UseMutationOptions } from '@tanstack/react-query';
-
-// type LoginParams = { email: string; password: string };
-// type LoginResponse = { token: string };
-
-// const login = async ({
-// 	email,
-// 	password,
-// }: LoginParams): Promise<LoginResponse> => {
-// 	const response = await axios.post('/api/login', { email, password });
-// 	return response.data;
-// };
-
-// export const useLoginMutation = (
-// 	options?: UseMutationOptions<LoginResponse, Error, LoginParams>
-// ) => {
-// 	return useMutation<LoginResponse, Error, LoginParams>({
-// 		mutationFn: login,
-// 		...options,
-// 	});
-// };
-
-// export const logout = async (): Promise<void> => {
-// 	await axios.delete('/api/login');
-// };
