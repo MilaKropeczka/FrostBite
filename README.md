@@ -1,13 +1,13 @@
 # 🚀 Live Demo
 
-Check out the live version of this project here: [LIVE FrostBite](https://milakropeczka.github.io/FrostBite/)
+Check out the live version of this project here: [LIVE FrostBite](https://frostbite-pi.vercel.app/)
 
 # 🖼 Image Gallery – React + TypeScript Project
 
-![Project Preview 1](./client/public/5.png)
-![Project Preview 2](./client/public/6.png)
-![Project Preview 3](./client/public/7.png)
-![Project Preview 4](./client/public/4.png)
+![Project Preview 1](./nextjs/public/5.png)
+![Project Preview 2](./nextjs/public/6.png)
+![Project Preview 3](./nextjs/public/7.png)
+![Project Preview 4](./nextjs/public/4.png)
 
 ## 🎯 Project Goal
 
