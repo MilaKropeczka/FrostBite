@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Order } from '@/components/TransactionItem/types';
+import { cookies } from 'next/headers';
 
 const orders: Record<string, Order[]> = {
 	'1': [
@@ -91,14 +92,17 @@ const orders: Record<string, Order[]> = {
 	],
 };
 
-export async function GET(req: Request) {
+export async function GET() {
 	await new Promise((resolve) => setTimeout(resolve, 200));
 
-	const auth = req.headers.get('authorization');
-	if (!auth) {
+	const cookieStore = await cookies();
+	const token = cookieStore.get('auth-token');
+
+	if (!token) {
 		return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
 	}
 
-	const userId = auth.replace('Bearer token-', '');
+	const userId = token.value.replace('token-', '');
+
 	return NextResponse.json(orders[userId] ?? []);
 }
