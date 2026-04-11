@@ -1,8 +1,11 @@
 'use client';
+import type { ComponentType } from 'react';
 import { SearchInput, SettingsButton, IconButton } from '@/components/UI';
 import { FaCartShopping, FaHeart, FaUser } from 'react-icons/fa6';
 import Link from 'next/link';
 import { useCartDrawerStore } from '@/store/useCartDrawerStore';
+
+type ToolbarIcon = ComponentType<{ size?: number; className?: string }>;
 
 const icons = [
 	{ id: 1, Icon: FaHeart, to: 'favorites', isButton: false },
@@ -11,7 +14,7 @@ const icons = [
 ];
 
 const renderIcon = (
-	Icon: React.ElementType,
+	Icon: ToolbarIcon,
 	to: string,
 	isButton: boolean,
 	toggleDrawer: (drawer: 'cart' | 'profile') => void,

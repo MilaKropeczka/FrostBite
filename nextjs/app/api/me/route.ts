@@ -13,7 +13,6 @@ export async function GET() {
 		user: {
 			id: '1',
 			email: 'test@test.pl',
-			password: 'testpassword123',
 			role: 'admin',
 		},
 	});

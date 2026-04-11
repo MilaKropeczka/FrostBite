@@ -1,5 +1,5 @@
 import { ProductSection } from '@/features/products';
 
-export default function Home() {
+export default function HomePage() {
 	return <ProductSection />;
 }

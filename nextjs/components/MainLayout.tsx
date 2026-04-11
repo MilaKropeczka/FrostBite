@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { SearchBar } from '@/components/SearchBar';
 import { Header } from '@/components/Header';
 import { CartDrawer } from '@/features/cart';
@@ -6,7 +7,7 @@ import { Footer } from '@/components/Footer';
 import { ProfileDrawer } from '@/features/profile/profileDrawer/ProfileDrawer';
 import { Toaster } from '@/components/UI';
 
-export function MainLayout({ children }) {
+export function MainLayout({ children }: { children: ReactNode }) {
 	return (
 		<div className='relative w-full min-h-screen flex flex-col items-center bg-gray-100'>
 			<Header />

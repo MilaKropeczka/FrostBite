@@ -1,4 +1,4 @@
-import { OrderProduct } from '../types';
+import { OrderProduct } from './types';
 
 export function OrderProductItem({ product }: { product: OrderProduct }) {
 	return (

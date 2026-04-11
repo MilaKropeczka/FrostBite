@@ -1,5 +1,5 @@
 import { DetailsAccount } from '@/features/profile/detailsAccount/DetailsAccount';
 
-export default function Home() {
+export default function ProfileAccountPage() {
 	return <DetailsAccount />;
 }

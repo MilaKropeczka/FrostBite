@@ -1,6 +1,6 @@
 import { FaStar, FaStarHalf, FaRegStar } from 'react-icons/fa';
 
-export function StarRating({ rating }) {
+export function StarRating({ rating }: { rating: number }) {
 	const fullStars = Math.floor(rating);
 	const hasHalfStar = rating - fullStars >= 0.5;
 	const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);

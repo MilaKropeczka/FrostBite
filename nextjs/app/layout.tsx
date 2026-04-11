@@ -1,8 +1,14 @@
-'use client';
-import ReactQueryProvider from '@/providers/ReactQueryProvider';
-import { MainLayout } from '@/components/MainLayout';
+import type { Metadata } from 'next';
+import { AppProviders } from './providers';
 import './globals.css';
-import { AuthProvider } from '@/providers/AuthProvider';
+
+export const metadata: Metadata = {
+	title: {
+		default: 'FrostBite',
+		template: '%s | FrostBite',
+	},
+	description: 'Sklep FrostBite',
+};
 
 export default function RootLayout({
 	children,
@@ -12,11 +18,7 @@ export default function RootLayout({
 	return (
 		<html lang='pl'>
 			<body>
-				<ReactQueryProvider>
-					<AuthProvider>
-						<MainLayout>{children}</MainLayout>
-					</AuthProvider>
-				</ReactQueryProvider>
+				<AppProviders>{children}</AppProviders>
 			</body>
 		</html>
 	);

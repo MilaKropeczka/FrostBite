@@ -1,4 +1,8 @@
-export function CategoryIcon({ Icon }) {
+import type { ComponentType } from 'react';
+
+type IconComponent = ComponentType<{ size?: number; className?: string }>;
+
+export function CategoryIcon({ Icon }: { Icon: IconComponent }) {
 	return (
 		<div className='bg-white p-3 inline-flex items-center justify-center text-pink-800 shadow-lg rounded-xl cursor-pointer transform duration-300 hover:-translate-y-1 hover:bg-gray-50 active:scale-90 hover:text-pink-700'>
 			<Icon size={30} />

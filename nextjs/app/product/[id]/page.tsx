@@ -1,5 +1,5 @@
 import { ProductView } from '@/features/products';
 
-export default function Home() {
+export default function ProductPage() {
 	return <ProductView />;
 }
