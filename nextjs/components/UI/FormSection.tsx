@@ -25,8 +25,8 @@ export function FormSection({
 }: FormSectionProps) {
 	return (
 		<section className={`w-full max-w-2xl ${className}`}>
-			{title && <SecondTitle title={title} />}
-			<div className='bg-white/80 shadow-lg p-6 rounded-xl'>
+			{title && <SecondTitle className='mx-3' title={title} />}
+			<div className='bg-white/80 shadow-lg p-6 rounded-xl mx-3'>
 				<form
 					noValidate
 					className='flex flex-col gap-2'
