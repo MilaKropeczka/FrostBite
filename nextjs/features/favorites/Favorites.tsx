@@ -14,7 +14,7 @@ export function Favorites() {
 	const favorites = useShopSlice((s) => s.favorites);
 	const toggleFavorite = useShopSlice((s) => s.toggleFavorite);
 	const favProducts = products.filter((p: Product) =>
-		favorites.includes(p.id)
+		favorites.includes(p.id),
 	);
 
 	return (
@@ -32,9 +32,9 @@ export function Favorites() {
 				<>
 					<SecondTitle
 						title='Twoje ulubione produkty'
-						className='mt-12 mb-6'
+						className='mt-12 mb-6 mx-3'
 					/>
-					<ul className='grid grid-cols-1 lg:grid-cols-2 gap-6 mb-18'>
+					<ul className='grid grid-cols-1 lg:grid-cols-2 gap-6 mb-18 px-3'>
 						{favProducts.map((product: Product) => {
 							const isFav = favorites.includes(product.id);
 							return (
