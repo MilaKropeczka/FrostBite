@@ -69,9 +69,9 @@ This is a simple front-end online store built to showcase key front-end skills, 
 
 Questions, feedback, or collaboration? Reach me at:
 
-- Email: milakropeczka@gmail.com
-- LinkedIn: [linkedin.com/in/paulina-gruszka](https://www.linkedin.com/in/milakropeczka/)
-- GitHub: [github.com/milakropeczka](https://github.com/milakropeczka)
+- Email: gruszka-paulina.mail@gmail.com
+- LinkedIn: [linkedin.com/in/gruszka-paulina](https://www.linkedin.com/in/gruszka-paulina/)
+- GitHub: [github.com/gruszka-paulina](https://github.com/gruszka-paulina)
 
 ## 📦 Installation
 
